@@ -96,7 +96,8 @@
 		4 ta theme lazem darim
 		tags page besh fek kon ro blog bashe, product, chi
 		categories page besh fek kon ro blog bashe, product, chi
-		yani in ke be farz in category hae blog hast pas nemishe rosh bezani posta ro ham biare, ye joori ma bayad chandin model category dashte bashim vase har model i joda bashe
+		yani in ke be farz in category hae blog hast pas nemishe rosh bezani posta ro ham biare, 
+		ye joori ma bayad chandin model category dashte bashim vase har model i joda bashe
 	7- buy, reserv
 		reserve hotel o class
 		kharide product
