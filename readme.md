@@ -2,6 +2,7 @@
 		create git project
 		create list of tasks
 		yaftane package to in zamine ha:
+			function global to kolle proje
 			react cli package
 			react pwa package
 			react material design theme and component
@@ -11,6 +12,7 @@
 			table
 			ckeditor
 			drop zone image
+			setting ya config
 			package like, share, comment, rate
 			router
 			codestyle
