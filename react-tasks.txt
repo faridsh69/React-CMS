@@ -3,6 +3,14 @@ ProfileForm.js
 	import ImageField from './../base/imageField';
 
 	export default class ProfileForm extends React.Component{
+		constructor(props){
+	  		super(props);
+	  		this.init();
+		}
+		data = null;
+		init() {
+			this.data = 'data'
+		}
 		render() {
 			return <ImageField />;
 		}
@@ -20,7 +28,7 @@ imageField.js
 1- structure:
 	+ create git project
 	+ create list of tasks
-	+ {{ 1 + 2 }}
+	+ learn react
 		+ import name: class/{function} from './base/setup' || 'react'
 			+ function hatman bayad export shode bashe ta beshe estefadash kard
 			+ moghe estefade az {} name function hatman mojod bashe 
@@ -33,12 +41,17 @@ imageField.js
 			+ letter avale name ye component bayad bozorg bashe
 			+ hatman react lazem dari
 			+ hame tag ha bayad baste beshe <br/>
-			+ () in ejbari nis
+			+ () in ejbari nis, vali kheili khobe bashe chon enter mizani dge kar nemikone
 		+ constructor
 			+ super hatman lazem darim vaghti az React.Component extends mikonim
-	function ro ye dokme
-	for
-	if
+		for
+		if
+		function ro ye dokme
+		kar ba probs
+		style ha koja bashe
+		value model input ha
+	write calculator with react
+
 	yaftane package to in zamine ha:
 		react cli package
 		react pwa package
