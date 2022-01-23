@@ -1,7 +1,9 @@
 // import "./App.css";
 import { formatPrice } from "./Helpers/Numbers";
+// import Button from '@mui/material/Button';
 
 function App() {
+  console.log(process.env.REACT_APP_WEBSITE_NAME);
   return (
     <div className="container">
       <header className="page-header">

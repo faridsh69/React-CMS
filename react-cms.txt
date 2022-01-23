@@ -17,24 +17,44 @@
 		+ add typescript
 		+ 	npm install --save typescript @types/node @types/react @types/react-dom @types/jest
 		IMAGE_INLINE_SIZE_LIMIT
-		use graphql
-		process.env.PUBLIC_URL
-		react material design theme and component
+		+ env
+		+	process.env.PUBLIC_URL
+		+	if (process.env.NODE_ENV !== 'production') {
+		+ react material design theme and component
+		+	npm install @mui/material @emotion/react @emotion/styled
 		test package
-		routing
-			npm install --save react-router-dom
 		form
 		table
 		ckeditor
 		drop zone image
 		setting ya config
 		package like, share, comment, rate
-		router
 		codestyle
-		test
-		role permission
-			react pwa package
+		routing
+			npm install --save react-router-dom
+			
+			role permission
+			test
+				https://jestjs.io/docs/expect
+			travis
+				https://docs.travis-ci.com/user/getting-started/
+			build project
+			run built project on laravel with react routing
+			firebase
+			aws
+			cache pages
+			serverside rendering
+			use graphql
+			relay graphql chie
+				https://relay.dev/
+				npm install --save babel-plugin-relay
+			flow chie
+				https://flow.org/
+			Web Vitals
+				check performance
+			react pwa
 				https://www.codica.com/blog/how-to-create-pwa-with-react/
+			collect errors on application and website
 	use redux, flux
 	routing safahat sakhtaresh
 	initial loading
