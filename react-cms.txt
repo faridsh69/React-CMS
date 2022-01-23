@@ -1,14 +1,28 @@
 1- structure:
 	+ create git project
 		npx create-react-app my-app
+		npx create-react-app my-app --template typescript
+		npx create-react-app cra-pwa --template cra-template-pwa
+
 	+ create list of tasks
 	yaftane package to in zamine ha:
-		function global to kolle proje
-		react cli package
-		react pwa package
+		+ function global to kolle proje
+		+ react cli package
+		+ use bootstrap
+		+	npm install bootstrap
+		+ use global constants
+		+	window.xx = 123;
+		+ use sass
+		+	npm install sass
+		+ add typescript
+		+ 	npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+		IMAGE_INLINE_SIZE_LIMIT
+		use graphql
+		process.env.PUBLIC_URL
 		react material design theme and component
 		test package
 		routing
+			npm install --save react-router-dom
 		form
 		table
 		ckeditor
@@ -19,6 +33,8 @@
 		codestyle
 		test
 		role permission
+			react pwa package
+				https://www.codica.com/blog/how-to-create-pwa-with-react/
 	use redux, flux
 	routing safahat sakhtaresh
 	initial loading
