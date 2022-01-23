@@ -1,0 +1,194 @@
+1- structure:
+	+ create git project
+		npx create-react-app my-app
+	+ create list of tasks
+	yaftane package to in zamine ha:
+		function global to kolle proje
+		react cli package
+		react pwa package
+		react material design theme and component
+		test package
+		routing
+		form
+		table
+		ckeditor
+		drop zone image
+		setting ya config
+		package like, share, comment, rate
+		router
+		codestyle
+		test
+		role permission
+	use redux, flux
+	routing safahat sakhtaresh
+	initial loading
+	call first sample api
+		loading for call api
+		act appropriate after fals return in api
+		late api loading or disconnect act like gmail with yellow notification on top
+	error pages -> 404, 500
+2- list
+	call an api and show a list
+	list types: grid and list
+	create table
+	search in list
+	sort on list
+	auto pagination on user scroll
+3- detail
+	call an api and show details
+	comment on details
+	like details
+	share
+	follow user
+	rate
+	show category, tags, related items
+4- form
+	form for create an item
+	field types:
+		text,
+		textarea,
+		number,
+		date,
+		time,
+		email,
+		color,
+		password,
+		time,
+		boolean -> checkbox, switch
+		select, 
+		multiselect,
+		file, image, video, audio
+		vase upload file multi select ham bashe
+		google recaptcha
+	validation on forms
+	send notification after save a data
+	image gallery for user profile pictures
+	remove image from gallery
+5- authentication
+	login with social media account like google plus
+	forget password
+	see user profile
+	update user profile
+	role and permission
+	safhe confirm email o phone ham bashe
+	kenare profile, user activity ham bezaram
+6- theme
+	lazy loading
+	system multi language
+	add icons in theme
+	meta hae safahat o tanzim kon
+	theme chidan o besh fek kon
+	setting kolle application o besh fekr kon
+	sakhtare block o module bezar to systeme theme
+		menu,
+		header,
+		main_features
+		features
+		breadcrumb
+		introduce
+		testimonial
+		products slider
+		partners
+		frequency asked questions
+		subscribe
+		countings
+		team
+		contact
+		map
+		footer
+	4 ta theme lazem darim
+	tags page besh fek kon ro blog bashe, product, chi
+	categories page besh fek kon ro blog bashe, product, chi
+	yani in ke be farz in category hae blog hast pas nemishe rosh bezani posta ro ham biare, 
+	ye joori ma bayad chandin model category dashte bashim vase har model i joda bashe
+7- buy, reserv
+	reserve hotel o class
+	kharide product
+8- utilities
+	neveshtane test vase tak tak bakhshae application
+	middleware to safahat mokhtalef darim
+	code style checking to hame bakhsha
+	use webpack
+	cache kardane kheili data ha, dge az server nakhone
+	seo site check beshe
+
+
+1
+	structure
+	expo
+	pwa
+	react-native-element
+	react-navigation
+	setting / config
+2
+	formik
+	react-native-table-view
+	react-native-ckeditor
+	react-animated-hearth
+	react-native-toast
+3
+	login/register
+	permission
+	react-suspense (react-persist) Two state loading screen
+	List Lazy load + recycler (ye chi jadid miad to list balai ha ro hazf kone)
+4
+	jest / mocha => unit testing
+	eslint => code style
+	api structure{ data, message, status }
+	payame monaseb baraye timeout
+	FireBase(log kollie error ha, tedade nasb, tedade crash, )
+
+
+ProfileForm.js
+	import React from 'react';
+	import ImageField from './../base/imageField';
+
+	export default class ProfileForm extends React.Component{
+		constructor(props){
+	  		super(props);
+	  		this.init();
+		}
+		data = null;
+		init() {
+			this.data = 'data'
+		}
+		render() {
+			return <ImageField />;
+		}
+	}
+
+imageField.js
+
+	import React from 'react';
+
+	export default function imageField() {
+		return <div> { 1 + 3 } <br/> <br/> </div>;
+	}
+
+
+1- structure:
+	+ create git project
+	+ create list of tasks
+	+ learn react
+		+ import name: class/{function} from './base/setup' || 'react'
+			+ function hatman bayad export shode bashe ta beshe estefadash kard
+			+ moghe estefade az {} name function hatman mojod bashe 
+			+ {className as alias} injori ham mishe use kard
+			+ age export default bezani mitoni namesh o har chi bezari
+			+ name file bayad camel case bashe userProfile
+			+ hame class o function ha bayad default dashte bashe
+			+ name importi bayad harfe avalesh bozorg bashe
+		+ template
+			+ letter avale name ye component bayad bozorg bashe
+			+ hatman react lazem dari
+			+ hame tag ha bayad baste beshe <br/>
+			+ () in ejbari nis, vali kheili khobe bashe chon enter mizani dge kar nemikone
+		+ constructor
+			+ super hatman lazem darim vaghti az React.Component extends mikonim
+		for
+		if
+		function ro ye dokme
+		kar ba probs
+		style ha koja bashe
+		value model input ha
+	write calculator with react
