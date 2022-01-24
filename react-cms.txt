@@ -6,20 +6,20 @@
 	test - https://jestjs.io/docs/expect
 
 	CI/CD - https://docs.travis-ci.com/user/getting-started/
-	build project
+	build project - run built project on laravel with react routing
 	api
 	postcss
 	sass
 	codestyle - https://github.com/airbnb/javascript/tree/master/react
-	SSR
-	relay graphql -	https://relay.dev/
-	pwa - https://www.codica.com/blog/how-to-create-pwa-with-react/
-	flow - https://flow.org/
-	webpack
-	performance, Web Vitals
-	firebase - collect errors on application and website with firebase
-	cache
-	seo
+		SSR
+		relay graphql -	https://relay.dev/
+		pwa - https://www.codica.com/blog/how-to-create-pwa-with-react/
+		flow - https://flow.org/
+		webpack
+		performance, Web Vitals
+		firebase - collect errors on application and website with firebase
+		cache
+		seo
 
 	+ create git project
 	+	npx create-react-app react-cms --template typescript
@@ -49,24 +49,53 @@
 	+	https://react-table.tanstack.com/docs/installation	
 	+ routing
 	+	npm install --save react-router-dom
-	initial loading vase safahat
-		build project
-		run built project on laravel with react routing
 2- list
-	/food
-	/categories/food
-	/tags/food
-	call first sample api
-		loading for call api
-		act appropriate after fals return in api
-		late api loading or disconnect act like gmail with yellow notification on top
-	error pages -> 404, 500
-	call an api and show a list
-	list types: grid and list
-	create table
-	search in list
-	sort on list
-	auto pagination on user scroll
+	toe componente app aslie ma in chiza bayad bashe
+		ye navbar darim ke az baghal baz mishe
+		ye seri tabs darim 3 tai ke pain hast - route hash bad moshakhas mishe
+		ye breadcrumb ham darim
+		toe har kodom az in ha ye seri route hast
+			error 404 e safahat ro tanzim konam
+			Home
+				toe home minevisim modules ke bade ha miaram tosh
+				injori mishe ke inja module hai ke to server hast pass dade mishe
+				har module i ye done componente ke call beshe ya nashe
+			Blogs
+				ye liste blogs miarim inja
+				eyne instagram mikonim, on balash ham category ha be sorate reyli hastan
+				/blogs
+				/categories/blog
+				/tags/blog
+				in blogs ha ye sorting dare
+				ye done search ham bezarim barash
+				vase pagination 2 ta kar bayad kar
+					aval in ke pagination ro user entekhab mikone 
+					on pain ye tabi darim be esme auto-pagination
+					toe on tabe liste blog ha ro neshon midim, scroll mikone pain bishtar blog miad
+					image hae blog ha hamegi lazy loading daran
+					vaghti ke ziad load mikone pain o image ziad load mishe recycler mikhaim
+				on pain ke tabe dge ham darim be esme table
+					toe table datae blog ha ro neshon midim
+			Foods
+				ye liste food miarim 
+				eyne menew bashe ba category hae ghaza ha
+					felan ro har ghaza mizanim chizi nemishe vali bade ha
+					ro har ghaza ke mizanim url avaz mishe o eyne menew ghaza baz mishe
+					har chi ke to ghesmate details hast o inja neshon midim
+			pages\how-to-use
+				module e marbote be page how-to-use ro pass midim
+			pages\about-us
+				module e marbote be page about-us ro pass midim
+			pages\contact-us
+		aval az hame bedone data e api mikhaim ke ba datae fake in kara ro konim
+		call first sample api
+			loading for call api
+			act appropriate after false return in api
+			late api loading or disconnect act like gmail with yellow notification on top
+			check kone ke internet vasl bashe hamishe age nist peygham bede
+		badesh migim ke har chi model darim ontaraf ke to front-routes hast o ba api pass midim invar
+		daghighan on model ha bayad bian inja be sorate automatic model ha beshinan
+		har chi ham ke page darim daghighan on page ha ham bayad inja bian beshinan
 3- detail
 	call an api and show details
 	comment on details
