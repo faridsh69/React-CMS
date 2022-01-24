@@ -1,69 +1,66 @@
 1- structure:
-	+ create git project
-		npx create-react-app my-app
-		npx create-react-app my-app --template typescript
-		npx create-react-app cra-pwa --template cra-template-pwa
+	typescript
+	routes
+	mui
+	formik
+	test - https://jestjs.io/docs/expect
 
+	CI/CD - https://docs.travis-ci.com/user/getting-started/
+	build project
+	api
+	postcss
+	sass
+	codestyle - https://github.com/airbnb/javascript/tree/master/react
+	SSR
+	relay graphql -	https://relay.dev/
+	pwa - https://www.codica.com/blog/how-to-create-pwa-with-react/
+	flow - https://flow.org/
+	webpack
+	performance, Web Vitals
+	firebase - collect errors on application and website with firebase
+	cache
+	seo
+
+	+ create git project
+	+	npx create-react-app react-cms --template typescript
 	+ create list of tasks
-	yaftane package to in zamine ha:
-		+ function global to kolle proje
-		+ react cli package
-		+ use bootstrap
-		+	npm install bootstrap
-		+ use global constants
-		+	window.xx = 123;
-		+ use sass
-		+	npm install sass
-		+ add typescript
-		+ 	npm install --save typescript @types/node @types/react @types/react-dom @types/jest
-		IMAGE_INLINE_SIZE_LIMIT
-		+ env
-		+	process.env.PUBLIC_URL
-		+	if (process.env.NODE_ENV !== 'production') {
-		+ react material design theme and component
-		+	npm install @mui/material @emotion/react @emotion/styled
-		test package
-		form
-		table
-		ckeditor
-		drop zone image
-		setting ya config
-		package like, share, comment, rate
-		codestyle
-		routing
-			npm install --save react-router-dom
-			
-			role permission
-			test
-				https://jestjs.io/docs/expect
-			travis
-				https://docs.travis-ci.com/user/getting-started/
-			build project
-			run built project on laravel with react routing
-			firebase
-			aws
-			cache pages
-			serverside rendering
-			use graphql
-			relay graphql chie
-				https://relay.dev/
-				npm install --save babel-plugin-relay
-			flow chie
-				https://flow.org/
-			Web Vitals
-				check performance
-			react pwa
-				https://www.codica.com/blog/how-to-create-pwa-with-react/
-			collect errors on application and website
-	use redux, flux
-	routing safahat sakhtaresh
-	initial loading
+	+ react cli package
+	+ use bootstrap
+	+	npm install bootstrap
+	+ use global constants
+	+	window.xx = 123;
+	+ use sass
+	+	npm install sass
+	+ add typescript
+	+ 	npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+	+ env
+	+	process.env.PUBLIC_URL
+	+	if (process.env.NODE_ENV !== 'production') {
+	+ react material design
+	+	npm install @mui/material @emotion/react @emotion/styled
+	+	<Button variant="outlined" startIcon={<DeleteIcon />}>
+	+ icon
+	+	npm install @mui/icons-material
+	+	import DeleteIcon from "@mui/icons-material/Delete";
+	+ form
+	+	npm install formik --save
+	+ table
+	+	npm install react-table --save
+	+	https://react-table.tanstack.com/docs/installation	
+	+ routing
+	+	npm install --save react-router-dom
+	initial loading vase safahat
+		build project
+		run built project on laravel with react routing
+2- list
+	/food
+	/categories/food
+	/tags/food
 	call first sample api
 		loading for call api
 		act appropriate after fals return in api
 		late api loading or disconnect act like gmail with yellow notification on top
 	error pages -> 404, 500
-2- list
 	call an api and show a list
 	list types: grid and list
 	create table
@@ -78,6 +75,7 @@
 	follow user
 	rate
 	show category, tags, related items
+	like, share, comment, rate
 4- form
 	form for create an item
 	field types:
@@ -93,6 +91,8 @@
 		boolean -> checkbox, switch
 		select, 
 		multiselect,
+		ckeditor
+		drop zone image
 		file, image, video, audio
 		vase upload file multi select ham bashe
 		google recaptcha
@@ -109,12 +109,10 @@
 	safhe confirm email o phone ham bashe
 	kenare profile, user activity ham bezaram
 6- theme
-	lazy loading
 	system multi language
-	add icons in theme
+	lazy loading
+	recycler mikhaim
 	meta hae safahat o tanzim kon
-	theme chidan o besh fek kon
-	setting kolle application o besh fekr kon
 	sakhtare block o module bezar to systeme theme
 		menu,
 		header,
@@ -132,27 +130,15 @@
 		contact
 		map
 		footer
-	4 ta theme lazem darim
-	tags page besh fek kon ro blog bashe, product, chi
-	categories page besh fek kon ro blog bashe, product, chi
-	yani in ke be farz in category hae blog hast pas nemishe rosh bezani posta ro ham biare, 
-	ye joori ma bayad chandin model category dashte bashim vase har model i joda bashe
 7- buy, reserv
 	reserve hotel o class
 	kharide product
-8- utilities
-	neveshtane test vase tak tak bakhshae application
-	middleware to safahat mokhtalef darim
-	code style checking to hame bakhsha
-	use webpack
-	cache kardane kheili data ha, dge az server nakhone
-	seo site check beshe
+	
 
 
 1
 	structure
 	expo
-	pwa
 	react-native-element
 	react-navigation
 	setting / config
@@ -175,56 +161,317 @@
 	FireBase(log kollie error ha, tedade nasb, tedade crash, )
 
 
-ProfileForm.js
-	import React from 'react';
-	import ImageField from './../base/imageField';
++ import name: class/{function} from './base/setup' || 'react'
+	+ function hatman bayad export shode bashe ta beshe estefadash kard
+	+ moghe estefade az { exactMethodName } name function hatman mojod bashe 
+	+ {className as alias} injori ham mishe use kard
+	+ age export default bezani mitoni namesh o har chi bezari
+	+ name file bayad camel case bashe userProfile.tsx
+	+ hame class o function ha bayad default dashte bashe
+	+ name importi bayad harfe avalesh bozorg bashe
+	+ letter avale name ye component bayad bozorg bashe
+	+ hame tag ha bayad baste beshe <br />
+	+ () in ejbari nis, vali kheili khobe bashe chon function run nemishe modam
+	+ constructor super hatman lazem darim vaghti az React.Component extends mikonim
 
-	export default class ProfileForm extends React.Component{
-		constructor(props){
-	  		super(props);
-	  		this.init();
-		}
-		data = null;
-		init() {
-			this.data = 'data'
-		}
-		render() {
-			return <ImageField />;
-		}
+// Get React with this link to use React.createElement
+<script src="https://unpkg.com/react@17.0.0/umd/react.development.js"></script>
+// Get ReactDOM.render to render created element
+<script src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.development.js"></script>
+// Get Babel to use JSX instead of React.createElement
+<script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
+<script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+
+// #1-1 use pure js to add new element
+var newDiv =  document.createElement('div');
+newDiv.textContent = 'Hello World';
+newDiv.className = 'container';
+document.getElementById('root').append(newDiv);
+
+// #1-2 use react to add new element
+const elementAttrs = {className: 'container', children: 'Hello World'}
+const element = React.createElement('div', elementAttrs)
+ReactDOM.render(element, document.getElementById('root'))
+
+// #1-3 use jsx to add new element
+const myclassName = 'container'
+const lastName='xxx'
+const children = `lastName: ${lastName}`
+// using variables as props values inside JSX
+const element = <div className={myclassName} >{children}</div>
+/// pass whole props and overriding some props
+const props = {className: 'container', children: 'Hello World'}
+const element = <div {...props} className="default" />
+
+// #1-4 custom component
+function message(props)
+{
+	return <div {...props} className />
+}
+/// use { message(props) } to use new custom component
+const element = (
+  <div className="container">
+    { message({children: 'Hello World'   }) }
+    { message({children: 'Goodbye World' }) }
+  </div>
+/// if you want to use `React.createElement` you can use `message` not `message()`
+)
+// #1-4-1 show custom component using React.createElement
+const element = (
+  <div className="container">
+    { React.createElement(message, {children: 'Hello World'}) }
+  </div>
+/// When you use React.createElement then we have new element named message in DOM
+// but when you use { message( then there will be no new parent element named message 
+) 
+/// #1-4-2 Want to show new component with JSX
+<Message {...props} />
+/// it is much easier to use JSX instead of this things
+{ React.createElement(Message, props) }
+{ Message(props) }
+// #1-4-3 validation on props
+const PropTypes = {
+  string(props, propName, componentName) {
+    if (typeof props[propName] !== 'string') {
+      return new Error(
+        `Hey, the component ${componentName} needs the prop ${propName} to be a string, but a ${typeof props[
+          propName
+        ]} was passed`,
+      )
+    }
+  },
+  required(props, propName, componentName) {
+    if (! props[propName]) {
+      return new Error(`${propName} is required.`)
+    }
+  },
+}
+
+function Message({subject, greeting}) {
+  return (
+    <div className="message">{greeting}, {subject}</div>
+///
+  )
+}
+// In this section we are defining validations for each props
+Message.propTypes = {
+  subject: PropTypes.required,
+  greeting: PropTypes.string,
+}
+const element = (
+  <div className="container">
+    <Message greeting="Hello" />
+    <Message subject="World" greeting={5} />
+  </div>
+///
+)
+// #1-4-4 Use prop-types.js instead of defining new validations
+// <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+Message.propTypes = {
+  subject: PropTypes.string.isRequired ,
+  greeting: PropTypes.string.isRequired,
+}
+// #1-4-5 use <React.Fragment> to have no div or other elements nested
+<React.Fragment><Message /><Message /></React.Fragment>
+/// You can use it without React.Fragment to do not see error one parent needed
+<><Message /><Message /></>
+
+/// #5 using style and class
+const largeBox = <div className="box box--large" style={{backgroundColor: 'orange'}} >large orange box</div>
+/// #5-1 using shared component with default values for class and style
+function Box({style, className = '', ...restOfProps}) {
+	return <div className={`box ${className}`} 
+		style={{fontStyle: 'italic', ...style}} 
+      	{...restOfProps} />
+}
+*/
+<Box class="box--large" style={{backgroundColor: 'lightblue'}}>
+    small lightblue box
+</Box>
+/// #6 forms you can get input value by pure js or use ref
+<form onSubmit={handleSubmit}>
+  <input ref={usernameRef} type="text" id="username" onChange={handleChange} />
+//</form>
+const usernameRef = React.useRef()
+const inputValue = usernameRef.current.value
+// with this command you can use ref like above
+
+// You can create runtime validation using setState
+const [error, updateError] = React.useState(null) 
+updateError(isValid ? null : 'Username must be lower case')
+<span>{error}</span>
+/// You can get value like this inside input onchange method
+const {value} = event.target
+// if you want to have a controlled inpput you can add value props to an state
+const [username, setUsername] = React.useState('')
+setUsername(event.target.value.toLowerCase())
+<input value={username} />
+// #7 - map
+<div className="cards">
+	{liveProducts.map((product, index) => (
+		<div className="card" key={index} id={index}>
+</div>
+
+function addToBasket(product)
+{
+	let newBasketProducts = basketProducts.map(p => p.id === product.id ? {...p, count: p.count + 1} : p);
+	if (newBasketProducts.filter(p => p.id === product.id).length === 0) {
+		newBasketProducts.push({count: 1, ...product})
 	}
+	setBasketProducts(newBasketProducts)
+}
+// Hooks #1 -  useEffect , we want to get data from localstorage and fill input
+window.localStorage.getItem('reactExampleGret') ?? initialName
+window.localStorage.getItem('reactExampleGret') || initialName
+// Hooks #2 - We want to save name state into localstorage always when component is rendering
+React.useEffect(() => {
+	window.localStorage.setItem('reactExampleGret', name)
+},[name])
+// Hooks #2 - if we dont want something happen again and again we need to use arrow function
+const [name, setName] = React.useState(() => someExpensiveComputation())
+// Hooks #3 - for example if we want to create new custome hook we can use this
+function useLocalStorageState(key, defaultValue = '') {
+  const [state, setState] = React.useState(
+    () => window.localStorage.getItem(key) || defaultValue,
+  )
 
-imageField.js
+  React.useEffect(() => {
+    window.localStorage.setItem(key, state)
+  }, [key, state])
 
-	import React from 'react';
+  return [state, setState]
+}
+// Hooks #3 - and we can call it using this
+const [name, setName] = useLocalStorageState('name', initialName) 
+// for define some states that are using in another components
+// we had to lift the states to parent state and use them in children
 
-	export default function imageField() {
-		return <div> { 1 + 3 } <br/> <br/> </div>;
-	}
+// #4 deriven hooks: define some consts that are getting their value from an state
+const nextValue = calculateNextValue(squares)
+const winner = calculateWinner(squares)
+const status = calculateStatus(winner, squares, nextValue)
+// #4 we need to make a copy of an state and never change it
+const squaresCopy = [...squares]
+squaresCopy[square] = nextValue
+setSquares(squaresCopy)
+// #6 - http request
+// with above code you can use then and you will handle error and result
+React.useEffect(() => {
+  fetchPokemon(pokemonName).then(
+    pokemon => setPokemon(pokemon),
+    error => setError(error),
+  )
+}, [pokemonName])
+// instead of defining 3 different states you should define only one object
+const [state, setState] = React.useState({
+  status: 'idle',
+  pokemon: null,
+  error: null,
+})
+// #6 - 4 we can have a component with this below code inside its render()
+// then that will be a wrapper for whole of its children
+return this.props.children
+// #6 - 4 if we want to get all errors from a component we need this
+// inside a children we need to add 
+throw error
+// then inside wrapper component use 
+static getDerivedStateFromError(error)
+// instead of whole of this use this only
+import {ErrorBoundary} from 'react-error-boundary'
+// resetKeys is used to reset the child component
+// onReset={handlereset} is called when you reset using resetErrorBoundary
+<ErrorBoundary 
+  FallbackComponent={ErrorFallback}
+  onReset={handlereset}
+  resetKeys={[pokemonName]}>
+    <PokemonInfo pokemonName={pokemonName} />
+</ErrorBoundary>
+// pass resetErrorBoundary to FallbackComponent={ErrorFallback}
+function ErrorFallback({error, resetErrorBoundary}) {
+  return (<div role="alert">{error.message}
+      <button onClick={resetErrorBoundary}>Try again</button></div>)
+}
+//</div>
+// #1 - Advanced hook - useReducer() - (like use State with a function)
+function countReducer(oldState, newState)
+{
+  return newState + oldState
+}
+// you need to define useReducer instead of useState when you want to
+// do something on your new state and also old state then change state
+const [count, setCount] = React.useReducer(countReducer, initialCount)
+setCount(newState)
+// instead of new state you can pass dispatch as an object
+const [state, dispatch] = React.useReducer(stateReducer, initialState)
+dispatch({type: 'INCREMENT', step})
+function stateReducer(state, action) {
+  return action.type === 'INCREMENT' ? {count: state.count + action.step} 
+}
+// #2 useCallback - (use it to cache a function or variable)
+const asyncCallbackCached = React.useCallback(() => {
+  return fetchPokemon(pokemonName)
+}, [pokemonName])
+const state = useAsync(asyncCallbackCached)
+// asyncCallbackCached is a function which is cached and will wrote in memory
+// #3 - useContext - (pass state from a component to another one) 
+const CountContext = React.createContext()
+// with above line of code you are creating new context
+function CountProvider(props) {
+  const value = React.useState(0)
+  return <CountContext.Provider value={value} {...props} />
+}
+// you need to create a provider function that is returning name of context
+// also it needs value prop and you can pass other props to it
+function CountDisplay() {
+  // you can use the state with this line
+  const [count, setCount] = React.useContext(CountContext)
+}
+// you need to use provider component like this and put children inside it 
+<CountProvider>
+  <CountDisplay />
+  <Counter />
+</CountProvider>
+// #4 - useLayoutEffect (will be called before browser paint the page) 
+// is just like useEffect and is running sooner 
+React.useLayoutEffect(() => {
+  containerRef.current.scrollTop = containerRef.current.scrollHeight
+})
 
+// #5 - useImperativeHandle (use ref on a functional component)
+const MessagesDisplay = React.forwardRef(
+  function MessagesDisplay(props, ref) {
+  })
+// with React.forwardRef we will tell react that function component
+// can have ref prop just like class component
+React.useImperativeHandle(ref, () => {
+  return {
+    scrollToTop,
+    scrollToBottom,
+  }
+})
+// inside ref we will have what we define insde useImperativeHandle
+// in the child component
 
-1- structure:
-	+ create git project
-	+ create list of tasks
-	+ learn react
-		+ import name: class/{function} from './base/setup' || 'react'
-			+ function hatman bayad export shode bashe ta beshe estefadash kard
-			+ moghe estefade az {} name function hatman mojod bashe 
-			+ {className as alias} injori ham mishe use kard
-			+ age export default bezani mitoni namesh o har chi bezari
-			+ name file bayad camel case bashe userProfile
-			+ hame class o function ha bayad default dashte bashe
-			+ name importi bayad harfe avalesh bozorg bashe
-		+ template
-			+ letter avale name ye component bayad bozorg bashe
-			+ hatman react lazem dari
-			+ hame tag ha bayad baste beshe <br/>
-			+ () in ejbari nis, vali kheili khobe bashe chon enter mizani dge kar nemikone
-		+ constructor
-			+ super hatman lazem darim vaghti az React.Component extends mikonim
-		for
-		if
-		function ro ye dokme
-		kar ba probs
-		style ha koja bashe
-		value model input ha
-	write calculator with react
+// #6 - useDebugValue (only for developerss)
+React.useDebugValue(`\`${query}\` => ${state}`)
+// with this hook we can see hooks data in dev tools
+
+// #1 - context module (move all methods for dispatch to context file)
+// #2 - compound component - (manage all children inside a component like this)
+function Foo({children}) {
+  return React.Children.map(children, (child, index) => {
+    return React.cloneElement(child, {
+      id: `i-am-child-${index}`,
+    })
+  })
+}
+
+function Bar() {
+  return (
+    <Foo>
+      <div>I will have id "i-am-child-0"</div>
+      <div>I will have id "i-am-child-1"</div>
+      <div>I will have id "i-am-child-2"</div>
+    </Foo>
+  )
+}
