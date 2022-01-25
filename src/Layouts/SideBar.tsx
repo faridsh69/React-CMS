@@ -31,18 +31,18 @@ import ContactUs from "../Pages/ContactUs";
 
 const sidebarItems = [
   { text: "Home", icon: <HomeOutlinedIcon />, route: "/" },
-  { text: "Food", icon: <RestaurantOutlinedIcon />, route: "/foods" },
-  { text: "Blog", icon: <DescriptionOutlinedIcon />, route: "/blogs" },
+  { text: "Food", icon: <RestaurantOutlinedIcon />, route: "/food" },
+  { text: "Blog", icon: <DescriptionOutlinedIcon />, route: "/blog" },
   {
     text: "How To Use",
     icon: <MouseOutlinedIcon />,
-    route: "/pages/how-to-use",
+    route: "/page/how-to-use",
   },
-  { text: "About Us", icon: <InfoOutlinedIcon />, route: "/pages/about-us" },
+  { text: "About Us", icon: <InfoOutlinedIcon />, route: "/page/about-us" },
   {
     text: "Contact Us",
     icon: <PhoneEnabledOutlinedIcon />,
-    route: "/pages/contact-us",
+    route: "/page/contact-us",
   },
 ];
 
@@ -187,11 +187,11 @@ export default function MiniDrawer() {
         <DrawerHeader />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="blogs" element={<Blogs />} />
-          <Route path="foods" element={<Foods />} />
-          <Route path="pages/how-to-use" element={<HowToUse />} />
-          <Route path="pages/about-us" element={<AboutUs />} />
-          <Route path="pages/contact-us" element={<ContactUs />} />
+          <Route path="blog" element={<Blogs />} />
+          <Route path="food" element={<Foods />} />
+          <Route path="page/how-to-use" element={<HowToUse />} />
+          <Route path="page/about-us" element={<AboutUs />} />
+          <Route path="page/contact-us" element={<ContactUs />} />
         </Routes>
       </Box>
     </Box>
