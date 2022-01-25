@@ -1,6 +1,28 @@
+import axios from "axios";
+
 export default function Blogs() {
+  const apiUrl = process.env.REACT_APP_API_URL;
+
+  async function getDataa() {
+    // var blogs = await getData();
+    // console.log(blogs);
+    axios
+      .get(apiUrl + "blog/1")
+      .then(function (response) {
+        // handle success
+        console.log(response);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error.response.data.message);
+        console.log(error.response.status);
+      })
+      .finally(function () {
+        // always executed
+      });
+  }
   return (
-    <ul>
+    <ul onClick={() => getDataa()}>
       <li> ye liste blogs miarim inja</li>
       <li> eyne instagram mikonim, </li>
       <li> on balash ham category ha be sorate reyli hastan</li>

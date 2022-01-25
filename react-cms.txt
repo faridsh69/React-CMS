@@ -3,7 +3,7 @@
 	routes
 	mui
 	formik
-	test - https://jestjs.io/docs/expect
+	test - https://jestjs.io/docs/expect - mock data
 
 	CI/CD - https://docs.travis-ci.com/user/getting-started/
 	build project - run built project on laravel with react routing
@@ -49,6 +49,12 @@
 	+	https://react-table.tanstack.com/docs/installation	
 	+ routing
 	+	npm install --save react-router-dom
+	ye service vase axios minevisim ke
+		age har data i omad bayad data pass dade beshe be component blog
+		message ha ro bade har bar api call shodan toast mikonim to safhe
+		age har message i omad bayad toas beshe
+		ta zamani ke darim load mikonim o data dare miadesh bayad loading neshon bedim
+		loading ziba bashe baraye in bakhsh
 2- list
 	+ toe componente app aslie ma in chiza bayad bashe
 	+	ye navbar darim ke az baghal baz mishe
@@ -60,6 +66,7 @@
 	+			injori mishe ke inja module hai ke to server hast pass dade mishe
 	+			har module i ye done componente ke call beshe ya nashe
 	+		Blogs
+	+			bad data api ro neshon midim
 				ye liste blogs miarim inja
 				eyne instagram mikonim, on balash ham category ha be sorate reyli hastan
 				/blogs
@@ -86,13 +93,7 @@
 			pages\about-us
 				module e marbote be page about-us ro pass midim
 			pages\contact-us
-			error 404 e safahat ro tanzim konam
-		aval az hame bedone data e api mikhaim ke ba datae fake in kara ro konim
-		call first sample api
-			loading for call api
-			act appropriate after false return in api
-			late api loading or disconnect act like gmail with yellow notification on top
-			check kone ke internet vasl bashe hamishe age nist peygham bede
+		error 404 e safahat ro tanzim konam
 		badesh migim ke har chi model darim ontaraf ke to front-routes hast o ba api pass midim invar
 		daghighan on model ha bayad bian inja be sorate automatic model ha beshinan
 		har chi ham ke page darim daghighan on page ha ham bayad inja bian beshinan

@@ -31,8 +31,8 @@ import ContactUs from "../Pages/ContactUs";
 
 const sidebarItems = [
   { text: "Home", icon: <HomeOutlinedIcon />, route: "/" },
-  { text: "Blog", icon: <DescriptionOutlinedIcon />, route: "/blogs" },
   { text: "Food", icon: <RestaurantOutlinedIcon />, route: "/foods" },
+  { text: "Blog", icon: <DescriptionOutlinedIcon />, route: "/blogs" },
   {
     text: "How To Use",
     icon: <MouseOutlinedIcon />,
@@ -171,10 +171,11 @@ export default function MiniDrawer() {
         <List>
           {sidebarItems.map((sidebarItem) => (
             <Link
+              key={sidebarItem.text}
               to={sidebarItem.route}
               style={{ textDecoration: "none", color: "inherit" }}
             >
-              <ListItem button key={sidebarItem.text}>
+              <ListItem button>
                 <ListItemIcon>{sidebarItem.icon}</ListItemIcon>
                 <ListItemText primary={sidebarItem.text} />
               </ListItem>
