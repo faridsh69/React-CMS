@@ -1,19 +1,27 @@
 import axios from "axios";
+import getResponseInterface from "../Interfaces/getResponseInterface";
 
-export default async function Get(modelSlug: string) {
+export default async function Get(modelSlug: string): Promise<any> {
   const apiUrl = process.env.REACT_APP_API_URL;
+  const getResponse: getResponseInterface = {
+    data: [],
+    message: "Something went wrong!",
+    status: "error",
+  };
 
-  function toastMessage(message: string, status: string) {
-    console.log(message);
-  }
   return axios
     .get(apiUrl + modelSlug)
     .then(function (response) {
-      toastMessage(response.data.message, "success");
-      return response.data.data;
+      getResponse.data = response.data.data;
+      getResponse.message = response.data.message;
+      getResponse.status = "success";
+      return getResponse;
     })
     .catch(function (error) {
-      toastMessage(error.response.data.message, "error");
+      if (error.response) {
+        getResponse.message = error.response.data.message;
+      }
+      return getResponse;
     })
     .finally(function () {});
 }

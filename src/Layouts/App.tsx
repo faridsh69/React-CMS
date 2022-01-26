@@ -1,12 +1,15 @@
 import { BrowserRouter } from "react-router-dom";
-import MiniDrawer from "./SideBar";
+import Master from "./Master";
 import Toast from "./Toast";
+import { ToastProvider } from "./Contexts/ToastContext";
 
 function App() {
   return (
     <BrowserRouter>
-      <MiniDrawer></MiniDrawer>
-      <Toast severity="info" message="messagex" />
+      <ToastProvider>
+        <Master></Master>
+        <Toast />
+      </ToastProvider>
     </BrowserRouter>
   );
 }

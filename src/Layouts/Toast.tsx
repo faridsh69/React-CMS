@@ -1,8 +1,8 @@
 import * as React from "react";
 import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
+import ToastContext from "./Contexts/ToastContext";
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
@@ -11,13 +11,12 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-export default function Toast(props: any) {
-  const [open, setOpen] = React.useState(false);
-  const { severity, message } = props;
+export default function Toast(): JSX.Element {
+  const duration = 3000;
 
-  const handleClick = () => {
-    setOpen(true);
-  };
+  const [toastState, setToastState] = React.useContext(ToastContext);
+
+  const { open, message, status } = toastState;
 
   const handleClose = (
     event?: React.SyntheticEvent | Event,
@@ -27,13 +26,13 @@ export default function Toast(props: any) {
       return;
     }
 
-    setOpen(false);
+    setToastState({ ...toastState, open: false });
   };
 
   return (
     <Stack spacing={2} sx={{ width: "100%" }}>
-      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity={severity} sx={{ width: "100%" }}>
+      <Snackbar open={open} autoHideDuration={duration} onClose={handleClose}>
+        <Alert onClose={handleClose} severity={status} sx={{ width: "100%" }}>
           {message}
         </Alert>
       </Snackbar>
