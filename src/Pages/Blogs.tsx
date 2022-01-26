@@ -2,15 +2,21 @@ import Get from "./../Services/Get";
 import React from "react";
 import Blog from "../Interfaces/Blog";
 import ToastContext from "../Layouts/Contexts/ToastContext";
-import getResponseInterface from "../Interfaces/getResponseInterface";
+import CustomeAlert from "../Layouts/CustomeAlert";
+import GetResponseInterface from "../Interfaces/GetResponseInterface";
+import Loading from "../Layouts/Loading";
 
 export default function Blogs() {
   const [blogs, setBlogs] = React.useState<Blog[]>([]);
 
   const [, setToastState] = React.useContext(ToastContext);
 
+  const [loading, setLoading] = React.useState<boolean>(false);
+
   React.useEffect(() => {
-    Get("blog").then((response: getResponseInterface) => {
+    setLoading(true);
+    Get("blog").then((response: GetResponseInterface) => {
+      setLoading(false);
       setBlogs(response.data);
       setToastState({
         open: true,
@@ -22,7 +28,14 @@ export default function Blogs() {
 
   return (
     <ul>
-      <li> test click </li>
+      {loading ? <Loading /> : ""}
+      {!blogs.length && !loading ? (
+        <li>
+          <CustomeAlert message="No Item Found!" status="info" />
+        </li>
+      ) : (
+        ""
+      )}
       {blogs.map((blog: Blog, index: number) => {
         return (
           <li key={index}>

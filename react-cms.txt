@@ -51,10 +51,10 @@
 	+	npm install --save react-router-dom
 	+ ye service vase axios minevisim ke
 	+	age har data i omad bayad data pass dade beshe be component blog
-		message ha ro bade har bar api call shodan toast mikonim to safhe
-		age har message i omad bayad toas beshe
-		ta zamani ke darim load mikonim o data dare miadesh bayad loading neshon bedim
-		loading ziba bashe baraye in bakhsh
+	+	message ha ro bade har bar api call shodan toast mikonim to safhe
+	+	age har message i omad bayad toas beshe
+	+	ta zamani ke darim load mikonim o data dare miadesh bayad loading neshon bedim
+	+	loading ziba bashe baraye in bakhsh
 		check mikonim age internet connection ghat bashe peyghame google i neshon midim
 2- list
 	+ toe componente app aslie ma in chiza bayad bashe

@@ -1,9 +1,9 @@
 import axios from "axios";
-import getResponseInterface from "../Interfaces/getResponseInterface";
+import GetResponseInterface from "../Interfaces/GetResponseInterface";
 
 export default async function Get(modelSlug: string): Promise<any> {
   const apiUrl = process.env.REACT_APP_API_URL;
-  const getResponse: getResponseInterface = {
+  const getResponse: GetResponseInterface = {
     data: [],
     message: "Something went wrong!",
     status: "error",

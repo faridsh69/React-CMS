@@ -1,7 +1,6 @@
 import { AlertColor } from "@mui/material";
 
-export default interface GetResponseInterface {
-  data: Array<any>;
+export default interface CustomeAlertInterface {
   message: string;
   status: AlertColor;
 }
