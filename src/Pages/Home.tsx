@@ -1,4 +1,14 @@
+import ToolsContext from "../Contexts/ToolsContext";
+import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
+import React from "react";
+
 export default function Home() {
+  const Tools = React.useContext<ToolsContextInterface>(ToolsContext);
+
+  React.useEffect(() => {
+    Tools.pageTitle.setState("React-CMS | Home");
+  }, []);
+
   return (
     <div>
       <div>

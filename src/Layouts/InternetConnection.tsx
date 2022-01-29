@@ -1,5 +1,5 @@
 import React from "react";
-import ToolsContext from "./Contexts/ToolsContext";
+import ToolsContext from "./../Contexts/ToolsContext";
 import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
 
 export default function InternetConnection(): JSX.Element {

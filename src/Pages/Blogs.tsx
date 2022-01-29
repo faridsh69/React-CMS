@@ -1,20 +1,21 @@
 import Get from "./../Services/Get";
 import React from "react";
 import Blog from "../Interfaces/Blog";
-import ToolsContext from "../Layouts/Contexts/ToolsContext";
+import ToolsContext from "../Contexts/ToolsContext";
 import CustomeAlert from "../Layouts/CustomeAlert";
 import GetResponseInterface from "../Interfaces/GetResponseInterface";
 import Loading from "../Layouts/Loading";
 import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
+import Meta from "../Layouts/Meta";
 
 export default function Blogs() {
   const [blogs, setBlogs] = React.useState<Blog[]>([]);
+  const [loading, setLoading] = React.useState<boolean>(false);
 
   const Tools = React.useContext<ToolsContextInterface>(ToolsContext);
 
-  const [loading, setLoading] = React.useState<boolean>(false);
-
   React.useEffect(() => {
+    Tools.pageTitle.setState("React-CMS | Blog");
     setLoading(true);
     Get("blog").then((response: GetResponseInterface) => {
       setLoading(false);
@@ -29,6 +30,7 @@ export default function Blogs() {
 
   return (
     <ul>
+      <Meta title="Blog" />
       {loading ? <Loading /> : ""}
       {!blogs.length && !loading ? (
         <li>

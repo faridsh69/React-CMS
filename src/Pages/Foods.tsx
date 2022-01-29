@@ -1,4 +1,14 @@
+import ToolsContext from "../Contexts/ToolsContext";
+import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
+import React from "react";
+
 export default function Foods() {
+  const Tools = React.useContext<ToolsContextInterface>(ToolsContext);
+
+  React.useEffect(() => {
+    Tools.pageTitle.setState("React-CMS | Food");
+  }, []);
+
   return (
     <ul>
       <li>ye liste food miarim</li>

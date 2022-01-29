@@ -1,6 +1,6 @@
 import React from "react";
-import ToastInterface from "../../Interfaces/ToastInterface";
-import ToolsContextInterface from "../../Interfaces/ToolsContextInterface";
+import ToastInterface from "../Interfaces/ToastInterface";
+import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
 
 const defaultValue: ToolsContextInterface = {
   toast: {

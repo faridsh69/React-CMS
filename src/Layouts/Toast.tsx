@@ -2,7 +2,7 @@ import * as React from "react";
 import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
-import ToolsContext from "./Contexts/ToolsContext";
+import ToolsContext from "./../Contexts/ToolsContext";
 import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
@@ -13,12 +13,10 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
 });
 
 export default function Toast(): JSX.Element {
-  const duration = 4000;
-
   const Tools = React.useContext<ToolsContextInterface>(ToolsContext);
-
   const { open, message, status } = Tools.toast.state;
 
+  const duration = 4000;
   const handleClose = (
     event?: React.SyntheticEvent | Event,
     reason?: string
@@ -26,7 +24,6 @@ export default function Toast(): JSX.Element {
     if (reason === "clickaway") {
       return;
     }
-
     Tools.toast.setState({ ...Tools.toast.state, open: false });
   };
 

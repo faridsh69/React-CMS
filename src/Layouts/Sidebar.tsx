@@ -22,6 +22,8 @@ import MouseOutlinedIcon from "@mui/icons-material/MouseOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import PhoneEnabledOutlinedIcon from "@mui/icons-material/PhoneEnabledOutlined";
 import { Link } from "react-router-dom";
+import ToolsContext from "./../Contexts/ToolsContext";
+import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
 
 const sidebarItems = [
   { text: "Home", icon: <HomeOutlinedIcon />, route: "/" },
@@ -41,9 +43,7 @@ const sidebarItems = [
 ];
 
 const drawerWidth = 240;
-
 const isDrawerOpen = true;
-
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,
   transition: theme.transitions.create("width", {
@@ -114,20 +114,16 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 export default function Sidebar(props: any) {
+  const Tools = React.useContext<ToolsContextInterface>(ToolsContext);
+
   const theme = useTheme();
-
   const [open, setOpen] = React.useState(isDrawerOpen);
-
-  const [pageTitle, setPageTitle] = React.useState("Title");
-
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -146,7 +142,7 @@ export default function Sidebar(props: any) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            {pageTitle}
+            {Tools.pageTitle.state}
           </Typography>
         </Toolbar>
       </AppBar>
