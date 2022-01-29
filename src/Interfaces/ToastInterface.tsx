@@ -1,7 +1,7 @@
 import { AlertColor } from "@mui/material";
 
-export default interface GetResponseInterface {
+export default interface ToastInterface {
   status: AlertColor;
   message: string;
-  data: Array<any>;
+  open: boolean;
 }

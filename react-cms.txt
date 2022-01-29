@@ -1,21 +1,20 @@
 + 1- structure:
-	typescript
-	routes
-	mui
+	+ typescript
+	+ routes
+	+ mui
+	+ api
 	formik
 	test - https://jestjs.io/docs/expect - mock data
-
-	CI/CD - https://docs.travis-ci.com/user/getting-started/
 	build project - run built project on laravel with react routing
-	api
-	postcss
-	sass
 	codestyle - https://github.com/airbnb/javascript/tree/master/react
+		sass
+		postcss
+		CI/CD - https://docs.travis-ci.com/user/getting-started/
 		SSR
 		relay graphql -	https://relay.dev/
 		pwa - https://www.codica.com/blog/how-to-create-pwa-with-react/
 		flow - https://flow.org/
-		webpack
+		webpack, babel
 		performance, Web Vitals
 		firebase - collect errors on application and website with firebase
 		cache
@@ -55,12 +54,16 @@
 	+	age har message i omad bayad toas beshe
 	+	ta zamani ke darim load mikonim o data dare miadesh bayad loading neshon bedim
 	+	loading ziba bashe baraye in bakhsh
-		check mikonim age internet connection ghat bashe peyghame google i neshon midim
+	+	check mikonim age internet connection ghat bashe peyghame google i neshon midim
+	pageTitle ro set konim ro taghirate route
+	page title ro fixesh kon
+	meta hae safhe ro fixesh kon
+	transition bezarim ro taghire route
+	ye breadcrumb ham darim
 2- list
 	+ toe componente app aslie ma in chiza bayad bashe
 	+	ye navbar darim ke az baghal baz mishe
-		ye seri tabs darim 3 tai ke pain hast - route hash bad moshakhas mishe
-		ye breadcrumb ham darim
+	+	ye seri tabs darim 3 tai ke pain hast - route hash bad moshakhas mishe
 	+	toe har kodom az in ha ye seri route hast
 	+		Home
 	+			toe home minevisim modules ke bade ha miaram tosh
@@ -68,21 +71,19 @@
 	+			har module i ye done componente ke call beshe ya nashe
 	+		Blogs
 	+			bad data api ro neshon midim
-				ye liste blogs miarim inja
-				eyne instagram mikonim, on balash ham category ha be sorate reyli hastan
-				/blogs
-				/categories/blog
-				/tags/blog
+	+			ye liste blogs miarim inja
 				in blogs ha ye sorting dare
 				ye done search ham bezarim barash
-				vase pagination 2 ta kar bayad kar
-					aval in ke pagination ro user entekhab mikone 
-					on pain ye tabi darim be esme auto-pagination
+				table
+					toe table datae blog ha ro neshon midim be sorate paginate
+				auto pagination:
 					toe on tabe liste blog ha ro neshon midim, scroll mikone pain bishtar blog miad
 					image hae blog ha hamegi lazy loading daran
 					vaghti ke ziad load mikone pain o image ziad load mishe recycler mikhaim
-				on pain ke tabe dge ham darim be esme table
-					toe table datae blog ha ro neshon midim
+				ye tab bashe eyne instagram mikonim UI ro
+	+ 			/blogs
+				/categories/blog ro be sorate reyli neshonesh bede
+				/tags/blog in ro ham be sorate radifi ye ja dge neshonesh bede
 			Foods
 				ye liste food miarim 
 				eyne menew bashe ba category hae ghaza ha

@@ -1,17 +1,10 @@
 import { BrowserRouter } from "react-router-dom";
 import Master from "./Master";
-import Toast from "./Toast";
-import { ToastProvider } from "./Contexts/ToastContext";
 
-function App() {
+export default function App(): JSX.Element {
   return (
     <BrowserRouter>
-      <ToastProvider>
-        <Master></Master>
-        <Toast />
-      </ToastProvider>
+      <Master></Master>
     </BrowserRouter>
   );
 }
-
-export default App;

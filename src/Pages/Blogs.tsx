@@ -1,15 +1,16 @@
 import Get from "./../Services/Get";
 import React from "react";
 import Blog from "../Interfaces/Blog";
-import ToastContext from "../Layouts/Contexts/ToastContext";
+import ToolsContext from "../Layouts/Contexts/ToolsContext";
 import CustomeAlert from "../Layouts/CustomeAlert";
 import GetResponseInterface from "../Interfaces/GetResponseInterface";
 import Loading from "../Layouts/Loading";
+import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
 
 export default function Blogs() {
   const [blogs, setBlogs] = React.useState<Blog[]>([]);
 
-  const [, setToastState] = React.useContext(ToastContext);
+  const Tools = React.useContext<ToolsContextInterface>(ToolsContext);
 
   const [loading, setLoading] = React.useState<boolean>(false);
 
@@ -18,7 +19,7 @@ export default function Blogs() {
     Get("blog").then((response: GetResponseInterface) => {
       setLoading(false);
       setBlogs(response.data);
-      setToastState({
+      Tools.toast.setState({
         open: true,
         message: response.message,
         status: response.status,
