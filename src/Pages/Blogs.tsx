@@ -7,6 +7,7 @@ import GetResponseInterface from "../Interfaces/GetResponseInterface";
 import Loading from "../Layouts/Loading";
 import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
 import Meta from "../Layouts/Meta";
+import axios from "axios";
 
 export default function Blogs() {
   const [blogs, setBlogs] = React.useState<Blog[]>([]);
@@ -15,7 +16,8 @@ export default function Blogs() {
   const Tools = React.useContext<ToolsContextInterface>(ToolsContext);
 
   React.useEffect(() => {
-    Tools.pageTitle.setState("React-CMS | Blog");
+    const cancelTokenSource = axios.CancelToken.source();
+    Tools.pageTitle.setState("React-CMS | Blogs");
     setLoading(true);
     Get("blog").then((response: GetResponseInterface) => {
       setLoading(false);
@@ -26,11 +28,13 @@ export default function Blogs() {
         status: response.status,
       });
     });
+
+    return () => cancelTokenSource.cancel();
   }, []);
 
   return (
     <ul>
-      <Meta title="Blog" />
+      <Meta title="Blogs" />
       {loading ? <Loading /> : ""}
       {!blogs.length && !loading ? (
         <li>

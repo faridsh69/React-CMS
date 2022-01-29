@@ -1,15 +1,15 @@
-import { BrowserRouter } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ToolsProvider } from "./../Contexts/ToolsContext";
+import Sidebar from "./Sidebar";
+import Toast from "./Toast";
+import InternetConnection from "./InternetConnection";
+
 import Home from "./../Pages/Home";
 import Blogs from "./../Pages/Blogs";
 import Foods from "../Pages/Foods";
 import HowToUse from "../Pages/HowToUse";
 import AboutUs from "../Pages/AboutUs";
 import ContactUs from "../Pages/ContactUs";
-import Toast from "./Toast";
-import { ToolsProvider } from "./../Contexts/ToolsContext";
-import Sidebar from "./Sidebar";
-import InternetConnection from "./InternetConnection";
 
 export default function App(): JSX.Element {
   return (

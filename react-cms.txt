@@ -57,9 +57,9 @@
 	+	check mikonim age internet connection ghat bashe peyghame google i neshon midim
 	+ pageTitle ro set konim ro taghirate route
 	+ ye breadcrumb ham darim
-	meta hae safhe ro fixesh kon
+	+ meta hae safhe ro fixesh kon
+	+ to cleanup function useeffect bezan ke ajax ha cancel beshan
 	transition bezarim ro taghire route
-	to cleanup function useeffect bezan ke ajax ha cancel beshan
 2- list
 	+ toe componente app aslie ma in chiza bayad bashe
 	+	ye navbar darim ke az baghal baz mishe

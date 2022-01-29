@@ -1,15 +1,21 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import MetaInterface from "../Interfaces/MetaInterface";
 
-export default function Meta(props: any) {
-  const description =
+export default function Meta(props: MetaInterface) {
+  const defaultTitle = "React-CMS";
+  const defaultDescription =
     "React CMS is providing structure and full features needed in most of websites";
-  const image =
+  const defaultImage =
     "http://cms2.test/temp-laravel-cms-static-files/photos/logo.png";
-  const title = props.title;
   const domain = "react-cms.com";
   const url = "react-cms.com/blog";
   const favicon =
     "http://cms2.test/temp-laravel-cms-static-files/photos/favicon.png";
+
+  const title = props.title ?? defaultTitle;
+  const description = props.description ?? defaultDescription;
+  const image = props.image ?? defaultImage;
+
   return (
     <HelmetProvider>
       <Helmet>
