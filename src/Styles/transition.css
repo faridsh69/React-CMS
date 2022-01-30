@@ -1,21 +1,12 @@
-.fade-enter {
-  opacity: 0;
-  transform: translate(0, 25px);
-  z-index: 1;
+.next-enter-active {
+  animation: enterFromRight 300ms both cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transform: translate(0, 0);
 
-  transition: opacity 250ms ease-out, transform 300ms ease;
-}
-.fade-exit {
-  opacity: 1;
-  transform: translate(0, 0);
-}
-.fade-exit.fade-exit-active {
-  opacity: 0;
-  transform: translate(0, 30px);
-
-  transition: opacity 250ms ease-out, transform 300ms ease;
+@keyframes enterFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }

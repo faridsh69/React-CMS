@@ -1,9 +1,9 @@
 import axios from "axios";
-import GetResponseInterface from "../Interfaces/GetResponseInterface";
+import AxiosResponseInterface from "../Interfaces/AxiosResponseInterface";
 
 export default async function Get(modelSlug: string): Promise<any> {
   const apiUrl = process.env.REACT_APP_API_URL;
-  const getResponse: GetResponseInterface = {
+  const AxiosResponse: AxiosResponseInterface = {
     data: [],
     message: "Something went wrong!",
     status: "error",
@@ -12,16 +12,15 @@ export default async function Get(modelSlug: string): Promise<any> {
   return axios
     .get(apiUrl + modelSlug)
     .then(function (response) {
-      getResponse.data = response.data.data;
-      getResponse.message = response.data.message;
-      getResponse.status = "success";
-      return getResponse;
+      AxiosResponse.data = response.data.data;
+      AxiosResponse.message = response.data.message;
+      AxiosResponse.status = "success";
+      return AxiosResponse;
     })
     .catch(function (error) {
       if (error.response) {
-        getResponse.message = error.response.data.message;
+        AxiosResponse.message = error.response.data.message;
       }
-      return getResponse;
-    })
-    .finally(function () {});
+      return AxiosResponse;
+    });
 }

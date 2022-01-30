@@ -3,7 +3,7 @@ import React from "react";
 import Blog from "../Interfaces/Blog";
 import ToolsContext from "../Contexts/ToolsContext";
 import CustomeAlert from "../Layouts/CustomeAlert";
-import GetResponseInterface from "../Interfaces/GetResponseInterface";
+import GetResponseInterface from "../Interfaces/AxiosResponseInterface";
 import Loading from "../Layouts/Loading";
 import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
 import Meta from "../Layouts/Meta";
@@ -15,7 +15,6 @@ export default function Blogs() {
   const Tools = React.useContext<ToolsContextInterface>(ToolsContext);
 
   React.useEffect(() => {
-    console.log(1);
     Tools.pageTitle.setState("React-CMS | Blogs");
     setLoading(true);
     Get("blog").then((response: GetResponseInterface) => {

@@ -15,15 +15,15 @@ export default function AppRoutes() {
   const nodeRef = React.useRef(null);
 
   return (
-    <TransitionGroup>
+    <TransitionGroup component={null}>
       <CSSTransition
         nodeRef={nodeRef}
         key={location.key}
         timeout={300}
-        classNames="fade"
+        classNames="next"
       >
         <div ref={nodeRef}>
-          <Routes>
+          <Routes location={location}>
             <Route path="/" element={<Home />} />
             <Route path="blog" element={<Blogs />} />
             <Route path="food" element={<Foods />} />
