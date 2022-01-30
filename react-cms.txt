@@ -7,6 +7,7 @@
 	test - https://jestjs.io/docs/expect - mock data
 	build project - run built project on laravel with react routing
 	codestyle - https://github.com/airbnb/javascript/tree/master/react
+	React.StrictMode
 		sass
 		postcss
 		CI/CD - https://docs.travis-ci.com/user/getting-started/
