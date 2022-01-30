@@ -1,25 +1,29 @@
 + 1- structure:
-	+ typescript
 	+ routes
 	+ mui
 	+ api
 	formik
-	test - https://jestjs.io/docs/expect - mock data
-	build project - run built project on laravel with react routing
-	codestyle - https://github.com/airbnb/javascript/tree/master/react
-	React.StrictMode
-		sass
-		postcss
+	+ Production
+	+	build project - run built project on laravel with react routing
 		CI/CD - https://docs.travis-ci.com/user/getting-started/
-		SSR
-		relay graphql -	https://relay.dev/
-		pwa - https://www.codica.com/blog/how-to-create-pwa-with-react/
-		flow - https://flow.org/
-		webpack, babel
-		performance, Web Vitals
+		test - https://jestjs.io/docs/expect - mock data
+			webpack
+			babel
+	+ Debug
+	+	typescript
+	+	flow - https://flow.org/
 		firebase - collect errors on application and website with firebase
-		cache
-		seo
+			codestyle - https://github.com/airbnb/javascript/tree/master/react
+			React.StrictMode
+	Performance
+		SSR
+			cache
+			performance, Web Vitals
+	pwa - https://www.codica.com/blog/how-to-create-pwa-with-react/
+	relay graphql -	https://relay.dev/
+	sass
+	postcss
+	seo
 
 	+ create git project
 	+	npx create-react-app react-cms --template typescript
@@ -64,7 +68,8 @@
 	+ to cleanup function useeffect bezan ke ajax ha cancel beshan
 	+ transition bezarim ro taghire route
 	+ work with date time functions
-	on khatae did ke khotot miofte ro tasvir ro pak kon
+	+ on khatae did ke khotot miofte ro tasvir ro pak kon
+	route hae sidebar yek ja tarif beshan o estefade beshan
 2- list
 	+ toe componente app aslie ma in chiza bayad bashe
 	+	ye navbar darim ke az baghal baz mishe

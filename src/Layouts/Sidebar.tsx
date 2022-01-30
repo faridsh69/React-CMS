@@ -15,33 +15,12 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
-import RestaurantOutlinedIcon from "@mui/icons-material/RestaurantOutlined";
-import MouseOutlinedIcon from "@mui/icons-material/MouseOutlined";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import PhoneEnabledOutlinedIcon from "@mui/icons-material/PhoneEnabledOutlined";
 
 import { Link } from "react-router-dom";
 import ToolsContext from "./../Contexts/ToolsContext";
 import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
-
-const sidebarItems = [
-  { text: "Home", icon: <HomeOutlinedIcon />, route: "/" },
-  { text: "Food", icon: <RestaurantOutlinedIcon />, route: "/food" },
-  { text: "Blog", icon: <DescriptionOutlinedIcon />, route: "/blog" },
-  {
-    text: "How To Use",
-    icon: <MouseOutlinedIcon />,
-    route: "/page/how-to-use",
-  },
-  { text: "About Us", icon: <InfoOutlinedIcon />, route: "/page/about-us" },
-  {
-    text: "Contact Us",
-    icon: <PhoneEnabledOutlinedIcon />,
-    route: "/page/contact-us",
-  },
-];
+import SidebarPropsInterface from "../Interfaces/SidebarPropsInterface";
+import SidebarItemInterface from "../Interfaces/SidebarItemInterface";
 
 const drawerWidth = 240;
 const isDrawerOpen = true;
@@ -71,7 +50,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   alignItems: "center",
   justifyContent: "flex-end",
   padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
   ...theme.mixins.toolbar,
 }));
 
@@ -114,17 +92,21 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-export default function Sidebar(props: any) {
+export default function Sidebar(props: SidebarPropsInterface): JSX.Element {
   const Tools = React.useContext<ToolsContextInterface>(ToolsContext);
 
   const theme = useTheme();
+
   const [open, setOpen] = React.useState(isDrawerOpen);
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
+
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -152,7 +134,6 @@ export default function Sidebar(props: any) {
           <Typography variant="h6" style={{ flex: 1 }} px={2}>
             {process.env.REACT_APP_WEBSITE_NAME}
           </Typography>
-
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
               <ChevronRightIcon />
@@ -163,15 +144,15 @@ export default function Sidebar(props: any) {
         </DrawerHeader>
         <Divider />
         <List>
-          {sidebarItems.map((sidebarItem) => (
+          {props.sidebarItems.map((sidebarItem: SidebarItemInterface) => (
             <Link
-              key={sidebarItem.text}
-              to={sidebarItem.route}
+              key={sidebarItem.name}
+              to={sidebarItem.path}
               style={{ textDecoration: "none", color: "inherit" }}
             >
               <ListItem button>
                 <ListItemIcon>{sidebarItem.icon}</ListItemIcon>
-                <ListItemText primary={sidebarItem.text} />
+                <ListItemText primary={sidebarItem.name} />
               </ListItem>
             </Link>
           ))}
