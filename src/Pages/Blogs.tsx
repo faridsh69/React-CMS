@@ -12,11 +12,10 @@ import axios from "axios";
 export default function Blogs() {
   const [blogs, setBlogs] = React.useState<Blog[]>([]);
   const [loading, setLoading] = React.useState<boolean>(false);
-
   const Tools = React.useContext<ToolsContextInterface>(ToolsContext);
 
   React.useEffect(() => {
-    const cancelTokenSource = axios.CancelToken.source();
+    console.log(1);
     Tools.pageTitle.setState("React-CMS | Blogs");
     setLoading(true);
     Get("blog").then((response: GetResponseInterface) => {
@@ -29,7 +28,7 @@ export default function Blogs() {
       });
     });
 
-    return () => cancelTokenSource.cancel();
+    return () => axios.CancelToken.source().cancel();
   }, []);
 
   return (
