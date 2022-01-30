@@ -2,12 +2,11 @@ import Get from "./../Services/Get";
 import React from "react";
 import Blog from "../Interfaces/Blog";
 import ToolsContext from "../Contexts/ToolsContext";
-import CustomeAlert from "../Layouts/CustomeAlert";
 import GetResponseInterface from "../Interfaces/AxiosResponseInterface";
-import Loading from "../Layouts/Loading";
 import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
 import Meta from "../Layouts/Meta";
 import axios from "axios";
+import Medias from "../Layouts/Medias";
 
 export default function Blogs() {
   const [blogs, setBlogs] = React.useState<Blog[]>([]);
@@ -31,38 +30,11 @@ export default function Blogs() {
   }, []);
 
   return (
-    <ul>
+    <>
       <Meta title="Blogs" />
-      {loading ? <Loading /> : ""}
-      {!blogs.length && !loading ? (
-        <li>
-          <CustomeAlert message="No Item Found!" status="info" />
-        </li>
-      ) : (
-        ""
-      )}
-      {blogs.map((blog: Blog, index: number) => {
-        return (
-          <li key={index}>
-            <a
-              href={"blog/" + blog.url}
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              <h3>
-                {blog.id}
-                <img width={50} src={blog.image} alt={blog.title} />
-                {blog.title}
-                <button>Show More...</button>
-                <small style={{ fontSize: "14px" }}>{blog.created_at}</small>
-              </h3>
-              <p>{blog.description}</p>
-            </a>
-          </li>
-        );
-      })}
+      <Medias loading={loading} items={blogs} />
 
-      <li>ye liste blogs miarim inja</li>
-      <li> eyne instagram mikonim, </li>
+      {/* <li> eyne instagram mikonim, </li>
       <li> on balash ham category ha be sorate reyli hastan</li>
       <li> /blogs </li>
       <li> /categories/blog </li>
@@ -79,7 +51,7 @@ export default function Blogs() {
         vaghti ke ziad load mikone pain o image ziad load mishe recycler mikhaim{" "}
       </li>
       <li>on pain ke tabe dge ham darim be esme table </li>
-      <li> toe table datae blog ha ro neshon midim</li>
-    </ul>
+      <li> toe table datae blog ha ro neshon midim</li> */}
+    </>
   );
 }

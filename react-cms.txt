@@ -49,6 +49,8 @@
 	+	https://react-table.tanstack.com/docs/installation	
 	+ routing
 	+	npm install --save react-router-dom
+	+ date
+	+	npm i react-moment
 	+ ye service vase axios minevisim ke
 	+	age har data i omad bayad data pass dade beshe be component blog
 	+	message ha ro bade har bar api call shodan toast mikonim to safhe
@@ -60,7 +62,9 @@
 	+ ye breadcrumb ham darim
 	+ meta hae safhe ro fixesh kon
 	+ to cleanup function useeffect bezan ke ajax ha cancel beshan
-	transition bezarim ro taghire route
+	+ transition bezarim ro taghire route
+	+ work with date time functions
+	on khatae did ke khotot miofte ro tasvir ro pak kon
 2- list
 	+ toe componente app aslie ma in chiza bayad bashe
 	+	ye navbar darim ke az baghal baz mishe
