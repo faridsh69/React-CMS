@@ -125,7 +125,7 @@ export default function Sidebar(props: SidebarPropsInterface): JSX.Element {
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>
-          <Box sx={{ flexGrow: 1 }}>
+          <Box sx={{ flexGrow: 3 }}>
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -139,7 +139,7 @@ export default function Sidebar(props: SidebarPropsInterface): JSX.Element {
               <MenuIcon />
             </IconButton>
 
-            <Typography variant="h6" noWrap component="div">
+            <Typography variant="h6" noWrap component="span">
               {Tools.pageTitle.state}
             </Typography>
           </Box>

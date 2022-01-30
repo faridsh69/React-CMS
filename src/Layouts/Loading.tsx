@@ -50,7 +50,6 @@ export default function Loading(props: LoadingPropsInterface) {
               />
               <Skeleton animation="wave" height={10} width="80%" />
             </>
-            )
           </CardContent>
         </Card>
       );

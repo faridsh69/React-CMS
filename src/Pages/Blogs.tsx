@@ -7,6 +7,14 @@ import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
 import Meta from "../Layouts/Meta";
 import axios from "axios";
 import Medias from "../Layouts/Medias";
+import Breadcrumb from "../Layouts/Breadcrumb";
+
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 export default function Blogs() {
   const [blogs, setBlogs] = React.useState<Blog[]>([]);
@@ -32,6 +40,14 @@ export default function Blogs() {
   return (
     <>
       <Meta title="Blogs" />
+      <Breadcrumb />
+      <br />
+      <Card sx={{ minWidth: 275 }}>
+        <CardActions>
+          <Button size="small">Sort By: Filter: </Button>
+        </CardActions>
+      </Card>
+
       <Medias loading={loading} items={blogs} />
 
       {/* <li> eyne instagram mikonim, </li>

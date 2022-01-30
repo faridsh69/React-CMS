@@ -54,7 +54,3 @@ export default function Media(props: MediaPropsInterface) {
     </Card>
   );
 }
-
-// <a href={}
-//     {blog.id}
-// </a>;
