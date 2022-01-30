@@ -69,7 +69,7 @@
 	+ transition bezarim ro taghire route
 	+ work with date time functions
 	+ on khatae did ke khotot miofte ro tasvir ro pak kon
-	route hae sidebar yek ja tarif beshan o estefade beshan
+	+ route hae sidebar yek ja tarif beshan o estefade beshan
 2- list
 	+ toe componente app aslie ma in chiza bayad bashe
 	+	ye navbar darim ke az baghal baz mishe
