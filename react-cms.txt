@@ -49,12 +49,13 @@
 	+ route hae sidebar yek ja tarif beshan o estefade beshan
 	+ meta hae safahat o tanzim kon
 	+ table ba sort o pagination
+	+ model food ro tamizesh konam
 	vase category hash ham ye fekri konam
+	scroll category o product bind beshan
 	lazy loading
 	recycler mikhaim
 	breadcrumb o syncesh kon ba app
 	error 404 e safahat ro tanzim konam
-	model food ro tamizesh konam
 2- list
 	+ toe componente app aslie ma in chiza bayad bashe
 	+	ye navbar darim ke az baghal baz mishe
@@ -68,6 +69,8 @@
 	+			ye liste foods miarim inja
 	+			bad data api ro neshon midim
 				/categories/food ro be sorate reyli neshonesh bede on balash
+				bad ke taraf scrol mikone to food, category on o biare
+				to category ha ham ke scrol kone food ha ham scrol she
 				image hae food ha hamegi lazy loading daran
 				vaghti ke ziad miad pain o image ziad load mishe recycler mikhaim
 3- detail
@@ -149,6 +152,16 @@
 		map
 		footer
 7- Tools
+	optimisation laravel cms:
+		php artisan optimise bezan
+		bad bezan php artisan route:list
+		bad test ha ro run kon
+		bad moshkelatesh o raf kon
+		bad biaresh ro ye serveri ke male khodete bala
+		on servere ro bebin chejori mitoni track koni cheghad cpu o ramesh masraf mishe
+		bad ye server vase STRESS test biar bala o shoro kon test begir
+		bad bekhon bebin chejori ha mishe ke cache koni data ro
+		bad az single ton o baghie design pattern ha tosh estefade kon
 	system multi language
 	reserve hotel o class
 	kharide product

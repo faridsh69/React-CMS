@@ -22,7 +22,7 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
 
 import Get from "./../Services/Get";
-import Blog from "../Interfaces/BlogInterface";
+import BlogInterface from "../Interfaces/BlogInterface";
 import ToolsContext from "../Contexts/ToolsContext";
 import GetResponseInterface from "../Interfaces/AxiosResponseInterface";
 import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
@@ -31,7 +31,7 @@ import axios from "axios";
 import Loading from "../Layouts/Loading";
 
 export default function Blogs(): JSX.Element {
-  const [rows, setRows] = React.useState<Blog[]>([]);
+  const [rows, setRows] = React.useState<BlogInterface[]>([]);
   const [loading, setLoading] = React.useState<boolean>(false);
   const Tools = React.useContext<ToolsContextInterface>(ToolsContext);
 
@@ -52,14 +52,14 @@ export default function Blogs(): JSX.Element {
   }, []);
 
   const [order, setOrder] = React.useState<Order>("asc");
-  const [orderBy, setOrderBy] = React.useState<keyof Blog>("title");
+  const [orderBy, setOrderBy] = React.useState<keyof BlogInterface>("title");
   const [selected, setSelected] = React.useState<string[]>([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   const handleRequestSort = (
     event: React.MouseEvent<unknown>,
-    property: keyof Blog
+    property: keyof BlogInterface
   ) => {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");
@@ -68,7 +68,7 @@ export default function Blogs(): JSX.Element {
 
   const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
-      const newSelecteds = rows.map((n: Blog) => n.title);
+      const newSelecteds = rows.map((n: BlogInterface) => n.title);
       setSelected(newSelecteds);
       return;
     }
@@ -237,7 +237,7 @@ function stableSort<T>(array: T[], comparator: (a: T, b: T) => number) {
 
 interface HeadCell {
   disablePadding: boolean;
-  id: keyof Blog;
+  id: keyof BlogInterface;
   label: string;
   numeric: boolean;
 }
@@ -261,7 +261,7 @@ interface EnhancedTableProps {
   numSelected: number;
   onRequestSort: (
     event: React.MouseEvent<unknown>,
-    property: keyof Blog
+    property: keyof BlogInterface
   ) => void;
   onSelectAllClick: (event: React.ChangeEvent<HTMLInputElement>) => void;
   order: Order;
@@ -279,7 +279,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
     onRequestSort,
   } = props;
   const createSortHandler =
-    (property: keyof Blog) => (event: React.MouseEvent<unknown>) => {
+    (property: keyof BlogInterface) => (event: React.MouseEvent<unknown>) => {
       onRequestSort(event, property);
     };
 

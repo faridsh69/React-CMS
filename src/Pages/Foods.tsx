@@ -1,25 +1,16 @@
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import TextField from "@mui/material/TextField";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-
 import Get from "./../Services/Get";
 import React from "react";
-import Food from "../Interfaces/Food";
+import FoodInterface from "../Interfaces/FoodInterface";
 import ToolsContext from "../Contexts/ToolsContext";
 import GetResponseInterface from "../Interfaces/AxiosResponseInterface";
 import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
 import Meta from "../Layouts/Meta";
 import axios from "axios";
 import Medias from "../Layouts/Medias";
-import Breadcrumb from "../Layouts/Breadcrumb";
+import Categories from "../Layouts/Categories";
 
 export default function Foods(): JSX.Element {
-  const [items, setItems] = React.useState<Food[]>([]);
+  const [items, setItems] = React.useState<FoodInterface[]>([]);
   const [loading, setLoading] = React.useState<boolean>(false);
   const Tools = React.useContext<ToolsContextInterface>(ToolsContext);
 
@@ -42,6 +33,7 @@ export default function Foods(): JSX.Element {
   return (
     <>
       <Meta title="Foods" />
+      <Categories />
 
       <Medias loading={loading} items={items} />
     </>
