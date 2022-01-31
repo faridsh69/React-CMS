@@ -10,7 +10,7 @@ export default function Loading(props: LoadingPropsInterface) {
   const { type } = props;
 
   switch (type) {
-    case "circular":
+    case "circle":
       return <CircularProgress color="inherit" />;
 
     case "media":

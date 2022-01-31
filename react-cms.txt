@@ -2,24 +2,6 @@
 	+ routes
 	+ mui
 	+ api
-	formik
-	+ Production
-	+	build project - run built project on laravel with react routing
-		CI/CD - https://docs.travis-ci.com/user/getting-started/
-		test - https://jestjs.io/docs/expect - mock data
-			webpack
-			babel
-	+ Debug
-	+	typescript
-	+	flow - https://flow.org/
-		firebase - collect errors on application and website with firebase
-			codestyle - https://github.com/airbnb/javascript/tree/master/react
-			React.StrictMode
-	relay graphql -	https://relay.dev/
-	sass
-	postcss
-	seo
-
 	+ create git project
 	+	npx create-react-app react-cms --template typescript
 	+ create list of tasks
@@ -66,27 +48,28 @@
 	+ on khatae did ke khotot miofte ro tasvir ro pak kon
 	+ route hae sidebar yek ja tarif beshan o estefade beshan
 	+ meta hae safahat o tanzim kon
+	+ table ba sort o pagination
+	vase category hash ham ye fekri konam
 	lazy loading
 	recycler mikhaim
 	breadcrumb o syncesh kon ba app
 	error 404 e safahat ro tanzim konam
 	model food ro tamizesh konam
-	vase category hash ham ye fekri konam
 2- list
 	+ toe componente app aslie ma in chiza bayad bashe
 	+	ye navbar darim ke az baghal baz mishe
 	+	ye seri tabs darim 3 tai ke pain hast - route hash bad moshakhas mishe
 	+	toe har kodom az in ha ye seri route hast
 	+		Blogs
-				toe table datae blog ha ro neshon midim be sorate paginate
+	+			toe table datae blog ha ro neshon midim be sorate paginate
 	+			in blog ha ye sorting dare
 	+			ye done search ham bezarim barash
 	+		Foods
 	+			ye liste foods miarim inja
 	+			bad data api ro neshon midim
+				/categories/food ro be sorate reyli neshonesh bede on balash
 				image hae food ha hamegi lazy loading daran
 				vaghti ke ziad miad pain o image ziad load mishe recycler mikhaim
-				/categories/food ro be sorate reyli neshonesh bede on balash
 3- detail
 	ro har ghaza ke mizanim url avaz mishe o eyne menew ghaza baz mishe
 	call an api and show details
@@ -171,11 +154,28 @@
 	kharide product
 	auto pagination, scroll mikone pain bishtar blog miad
 	ye tab bashe eyne instagram mikonim UI ro
+	+ Production
+	+	build project - run built project on laravel with react routing
+		CI/CD - https://docs.travis-ci.com/user/getting-started/
+		test - https://jestjs.io/docs/expect - mock data
+			webpack
+			babel
+	+ Debug
+	+	typescript
+	+	flow - https://flow.org/
+		firebase - collect errors on application and website with firebase
+			codestyle - https://github.com/airbnb/javascript/tree/master/react
+			React.StrictMode
 	Performance
 		SSR
 		cache
 		performance, Web Vitals
 		pwa - https://www.codica.com/blog/how-to-create-pwa-with-react/
+	relay graphql -	https://relay.dev/
+	sass
+	postcss
+	seo
+
 
 	
 

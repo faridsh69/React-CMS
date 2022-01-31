@@ -1,3 +1,3 @@
 export default interface LoadingPropsInterface {
-  type: "media" | "circular";
+  type: "media" | "circle";
 }

@@ -1,68 +1,46 @@
+import React from "react";
 import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import TextField from "@mui/material/TextField";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { alpha } from "@mui/material/styles";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TablePagination from "@mui/material/TablePagination";
+import TableRow from "@mui/material/TableRow";
+import TableSortLabel from "@mui/material/TableSortLabel";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Paper from "@mui/material/Paper";
+import Checkbox from "@mui/material/Checkbox";
+import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
+import DeleteIcon from "@mui/icons-material/Delete";
+import FilterListIcon from "@mui/icons-material/FilterList";
+import { visuallyHidden } from "@mui/utils";
 
 import Get from "./../Services/Get";
-import React from "react";
 import Blog from "../Interfaces/BlogInterface";
 import ToolsContext from "../Contexts/ToolsContext";
 import GetResponseInterface from "../Interfaces/AxiosResponseInterface";
 import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
 import Meta from "../Layouts/Meta";
 import axios from "axios";
-import Breadcrumb from "../Layouts/Breadcrumb";
+import Loading from "../Layouts/Loading";
 
 export default function Blogs(): JSX.Element {
-  const [blogs, setBlogs] = React.useState<Blog[]>([]);
-  const [items, setItems] = React.useState<Blog[]>([]);
+  const [rows, setRows] = React.useState<Blog[]>([]);
   const [loading, setLoading] = React.useState<boolean>(false);
   const Tools = React.useContext<ToolsContextInterface>(ToolsContext);
-  const [orderBy, setOrderBy] = React.useState<string>("");
-
-  const orderByOptions = [
-    { title: "Id, Asc ", value: "id-asc" },
-    { title: "Id, Desc ", value: "id-dsc" },
-    { title: "Title, Asc", value: "title-asc" },
-    { title: "Title, Desc", value: "title-dsc" },
-  ];
-
-  const handleSort = (event: SelectChangeEvent) => {
-    const ordering: string = event.target.value;
-    setOrderBy(ordering);
-    setItems(sort(items, ordering));
-  };
-
-  const sort = (items: Blog[], ordering: string): Blog[] => {
-    const [property, direction] = ordering.split("-");
-    const directionNumber: number = direction === "asc" ? 1 : -1;
-    const emptyItems: Blog[] = [];
-    return emptyItems
-      .concat(items)
-      .sort((a: any, b: any) =>
-        a[property] > b[property] ? directionNumber : -1 * directionNumber
-      );
-  };
-
-  const handleFilter = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    const searchText = (e.target as HTMLInputElement).value;
-    let filteredItems = blogs.filter((blog: Blog) =>
-      blog.title.includes(searchText)
-    );
-    setItems(sort(filteredItems, orderBy));
-  };
 
   React.useEffect(() => {
     Tools.pageTitle.setState("React-CMS | Blogs");
     setLoading(true);
     Get("blog").then((response: GetResponseInterface) => {
       setLoading(false);
-      setItems(response.data);
-      setBlogs(response.data);
+      setRows(response.data);
       Tools.toast.setState({
         open: true,
         message: response.message,
@@ -73,44 +51,331 @@ export default function Blogs(): JSX.Element {
     return () => axios.CancelToken.source().cancel();
   }, []);
 
+  const [order, setOrder] = React.useState<Order>("asc");
+  const [orderBy, setOrderBy] = React.useState<keyof Blog>("title");
+  const [selected, setSelected] = React.useState<string[]>([]);
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+
+  const handleRequestSort = (
+    event: React.MouseEvent<unknown>,
+    property: keyof Blog
+  ) => {
+    const isAsc = orderBy === property && order === "asc";
+    setOrder(isAsc ? "desc" : "asc");
+    setOrderBy(property);
+  };
+
+  const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.checked) {
+      const newSelecteds = rows.map((n: Blog) => n.title);
+      setSelected(newSelecteds);
+      return;
+    }
+    setSelected([]);
+  };
+
+  const handleClick = (event: React.MouseEvent<unknown>, name: string) => {
+    const selectedIndex = selected.indexOf(name);
+    let newSelected: string[] = [];
+
+    if (selectedIndex === -1) {
+      newSelected = newSelected.concat(selected, name);
+    } else if (selectedIndex === 0) {
+      newSelected = newSelected.concat(selected.slice(1));
+    } else if (selectedIndex === selected.length - 1) {
+      newSelected = newSelected.concat(selected.slice(0, -1));
+    } else if (selectedIndex > 0) {
+      newSelected = newSelected.concat(
+        selected.slice(0, selectedIndex),
+        selected.slice(selectedIndex + 1)
+      );
+    }
+
+    setSelected(newSelected);
+  };
+
+  const handleChangePage = (event: unknown, newPage: number) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
+  const isSelected = (name: string) => selected.indexOf(name) !== -1;
+
+  // Avoid a layout jump when reaching the last page with empty rows.
+  const emptyRows =
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
+
   return (
     <>
       <Meta title="Blogs" />
-      <Breadcrumb />
-      <br />
-      <Card sx={{ minWidth: 275 }}>
-        <CardActions>
-          <Box sx={{ minWidth: 130 }}>
-            <FormControl fullWidth>
-              <InputLabel id="order-by">Order By</InputLabel>
-              <Select
-                labelId="order-by"
-                value={orderBy}
-                label="Order By"
-                onChange={handleSort}
-              >
-                {orderByOptions.map((orderByOption) => {
-                  return (
-                    <MenuItem
-                      value={orderByOption.value}
-                      key={orderByOption.title}
-                    >
-                      {orderByOption.title}
-                    </MenuItem>
-                  );
-                })}
-              </Select>
-            </FormControl>
-          </Box>
-          <Box sx={{ minWidth: 400 }}>
-            <TextField
-              label="Search"
-              variant="standard"
-              onKeyUp={handleFilter}
-            />
-          </Box>
-        </CardActions>
-      </Card>
+      {loading ? <Loading type="circle" /> : ""}
+      <Box sx={{ width: "100%" }}>
+        <Paper sx={{ width: "100%", mb: 2 }}>
+          <EnhancedTableToolbar numSelected={selected.length} />
+          <TableContainer>
+            <Table
+              sx={{ minWidth: 750 }}
+              aria-labelledby="tableTitle"
+              size={"medium"}
+            >
+              <EnhancedTableHead
+                numSelected={selected.length}
+                order={order}
+                orderBy={orderBy}
+                onSelectAllClick={handleSelectAllClick}
+                onRequestSort={handleRequestSort}
+                rowCount={rows.length}
+              />
+              <TableBody>
+                {/* if you don't need to support IE11, you can replace the `stableSort` call with:
+              rows.slice().sort(getComparator(order, orderBy)) */}
+                {stableSort(rows, getComparator(order, orderBy))
+                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                  .map((row, index) => {
+                    const isItemSelected = isSelected(row.title);
+                    const labelId = `enhanced-table-checkbox-${index}`;
+
+                    return (
+                      <TableRow
+                        hover
+                        onClick={(event) => handleClick(event, row.title)}
+                        role="checkbox"
+                        aria-checked={isItemSelected}
+                        tabIndex={-1}
+                        key={row.title}
+                        selected={isItemSelected}
+                      >
+                        <TableCell padding="checkbox">
+                          <Checkbox
+                            color="primary"
+                            checked={isItemSelected}
+                            inputProps={{
+                              "aria-labelledby": labelId,
+                            }}
+                          />
+                        </TableCell>
+                        <TableCell
+                          component="th"
+                          id={labelId}
+                          scope="row"
+                          padding="none"
+                        >
+                          {row.title}
+                        </TableCell>
+                        <TableCell align="right">{row.id}</TableCell>
+                      </TableRow>
+                    );
+                  })}
+                {emptyRows > 0 && (
+                  <TableRow
+                    style={{
+                      height: 53 * emptyRows,
+                    }}
+                  >
+                    <TableCell colSpan={6} />
+                  </TableRow>
+                )}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <TablePagination
+            rowsPerPageOptions={[2, 3, 5]}
+            component="div"
+            count={rows.length}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            onPageChange={handleChangePage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+          />
+        </Paper>
+      </Box>
     </>
   );
 }
+
+function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
+  if (b[orderBy] < a[orderBy]) {
+    return -1;
+  }
+  if (b[orderBy] > a[orderBy]) {
+    return 1;
+  }
+  return 0;
+}
+
+type Order = "asc" | "desc";
+
+function getComparator<Key extends keyof any>(
+  order: Order,
+  orderBy: Key
+): (a: any, b: any) => number {
+  return order === "desc"
+    ? (a, b) => descendingComparator(a, b, orderBy)
+    : (a, b) => -descendingComparator(a, b, orderBy);
+}
+
+// This method is created for cross-browser compatibility, if you don't
+// need to support IE11, you can use Array.prototype.sort() directly
+function stableSort<T>(array: T[], comparator: (a: T, b: T) => number) {
+  const stabilizedThis = array.map((el, index) => [el, index] as [T, number]);
+  stabilizedThis.sort((a, b) => {
+    const order = comparator(a[0], b[0]);
+    if (order !== 0) {
+      return order;
+    }
+    return a[1] - b[1];
+  });
+  return stabilizedThis.map((el) => el[0]);
+}
+
+interface HeadCell {
+  disablePadding: boolean;
+  id: keyof Blog;
+  label: string;
+  numeric: boolean;
+}
+
+const headCells: HeadCell[] = [
+  {
+    id: "title",
+    numeric: false,
+    disablePadding: true,
+    label: "Title",
+  },
+  {
+    id: "id",
+    numeric: true,
+    disablePadding: false,
+    label: "ID",
+  },
+];
+
+interface EnhancedTableProps {
+  numSelected: number;
+  onRequestSort: (
+    event: React.MouseEvent<unknown>,
+    property: keyof Blog
+  ) => void;
+  onSelectAllClick: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  order: Order;
+  orderBy: string;
+  rowCount: number;
+}
+
+function EnhancedTableHead(props: EnhancedTableProps) {
+  const {
+    onSelectAllClick,
+    order,
+    orderBy,
+    numSelected,
+    rowCount,
+    onRequestSort,
+  } = props;
+  const createSortHandler =
+    (property: keyof Blog) => (event: React.MouseEvent<unknown>) => {
+      onRequestSort(event, property);
+    };
+
+  return (
+    <TableHead>
+      <TableRow>
+        <TableCell padding="checkbox">
+          <Checkbox
+            color="primary"
+            indeterminate={numSelected > 0 && numSelected < rowCount}
+            checked={rowCount > 0 && numSelected === rowCount}
+            onChange={onSelectAllClick}
+            inputProps={{
+              "aria-label": "select all desserts",
+            }}
+          />
+        </TableCell>
+        {headCells.map((headCell) => (
+          <TableCell
+            key={headCell.id}
+            align={headCell.numeric ? "right" : "left"}
+            padding={headCell.disablePadding ? "none" : "normal"}
+            sortDirection={orderBy === headCell.id ? order : false}
+          >
+            <TableSortLabel
+              active={orderBy === headCell.id}
+              direction={orderBy === headCell.id ? order : "asc"}
+              onClick={createSortHandler(headCell.id)}
+            >
+              {headCell.label}
+              {orderBy === headCell.id ? (
+                <Box component="span" sx={visuallyHidden}>
+                  {order === "desc" ? "sorted descending" : "sorted ascending"}
+                </Box>
+              ) : null}
+            </TableSortLabel>
+          </TableCell>
+        ))}
+      </TableRow>
+    </TableHead>
+  );
+}
+
+interface EnhancedTableToolbarProps {
+  numSelected: number;
+}
+
+const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
+  const { numSelected } = props;
+
+  return (
+    <Toolbar
+      sx={{
+        pl: { sm: 2 },
+        pr: { xs: 1, sm: 1 },
+        ...(numSelected > 0 && {
+          bgcolor: (theme) =>
+            alpha(
+              theme.palette.primary.main,
+              theme.palette.action.activatedOpacity
+            ),
+        }),
+      }}
+    >
+      {numSelected > 0 ? (
+        <Typography
+          sx={{ flex: "1 1 100%" }}
+          color="inherit"
+          variant="subtitle1"
+          component="div"
+        >
+          {numSelected} selected
+        </Typography>
+      ) : (
+        <Typography
+          sx={{ flex: "1 1 100%" }}
+          variant="h6"
+          id="tableTitle"
+          component="div"
+        >
+          Blogs
+        </Typography>
+      )}
+      {numSelected > 0 ? (
+        <Tooltip title="Delete">
+          <IconButton>
+            <DeleteIcon />
+          </IconButton>
+        </Tooltip>
+      ) : (
+        <Tooltip title="Filter list">
+          <IconButton>
+            <FilterListIcon />
+          </IconButton>
+        </Tooltip>
+      )}
+    </Toolbar>
+  );
+};
