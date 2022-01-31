@@ -70,6 +70,7 @@
 	+ work with date time functions
 	+ on khatae did ke khotot miofte ro tasvir ro pak kon
 	+ route hae sidebar yek ja tarif beshan o estefade beshan
+	breadcrumb o syncesh kon ba app
 2- list
 	+ toe componente app aslie ma in chiza bayad bashe
 	+	ye navbar darim ke az baghal baz mishe
