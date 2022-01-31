@@ -1,6 +1,6 @@
-import Blog from "./Blog";
+import BlogInterface from "./BlogInterface";
 
 export default interface MediasPropsInterface {
   loading: boolean;
-  items: Blog[];
+  items: any[];
 }

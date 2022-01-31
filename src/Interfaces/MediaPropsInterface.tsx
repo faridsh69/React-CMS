@@ -1,5 +1,5 @@
-import Blog from "./Blog";
+import BlogInterface from "./BlogInterface";
 
 export default interface MediaPropsInterface {
-  item: Blog;
+  item: BlogInterface;
 }

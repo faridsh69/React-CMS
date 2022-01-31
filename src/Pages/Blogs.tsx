@@ -9,13 +9,12 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 import Get from "./../Services/Get";
 import React from "react";
-import Blog from "../Interfaces/Blog";
+import Blog from "../Interfaces/BlogInterface";
 import ToolsContext from "../Contexts/ToolsContext";
 import GetResponseInterface from "../Interfaces/AxiosResponseInterface";
 import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
 import Meta from "../Layouts/Meta";
 import axios from "axios";
-import Medias from "../Layouts/Medias";
 import Breadcrumb from "../Layouts/Breadcrumb";
 
 export default function Blogs(): JSX.Element {
@@ -58,7 +57,7 @@ export default function Blogs(): JSX.Element {
   };
 
   React.useEffect(() => {
-    // Tools.pageTitle.setState("React-CMS | Blogs");
+    Tools.pageTitle.setState("React-CMS | Blogs");
     setLoading(true);
     Get("blog").then((response: GetResponseInterface) => {
       setLoading(false);
@@ -112,25 +111,6 @@ export default function Blogs(): JSX.Element {
           </Box>
         </CardActions>
       </Card>
-
-      <Medias loading={loading} items={items} />
-
-      {/* <li> eyne instagram mikonim, </li>
-      <li> on balash ham category ha be sorate reyli hastan</li>
-      <li> /blogs </li>
-      <li> /categories/blog </li>
-      <li> /tags/blog</li>
-      <li> vase pagination 2 ta kar bayad kard </li>
-      <li>aval in ke pagination ro user entekhab mikone</li>
-      <li>on pain ye tabi darim be esme auto-pagination </li>
-      <li>toe on tabe liste blog ha ro neshon midim,</li>
-      <li>scroll mikone pain bishtar blog miad </li>
-      <li> image hae blog ha hamegi lazy loading daran </li>
-      <li>
-        vaghti ke ziad load mikone pain o image ziad load mishe recycler mikhaim{" "}
-      </li>
-      <li>on pain ke tabe dge ham darim be esme table </li>
-      <li> toe table datae blog ha ro neshon midim</li> */}
     </>
   );
 }

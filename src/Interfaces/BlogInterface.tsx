@@ -1,4 +1,4 @@
-export default interface Blog {
+export default interface BlogInterface {
   id: number;
   title: string;
   url: string;
