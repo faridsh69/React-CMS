@@ -5,12 +5,10 @@ export default function Meta(props: MetaInterface) {
   const defaultTitle = "React-CMS";
   const defaultDescription =
     "React CMS is providing structure and full features needed in most of websites";
-  const defaultImage =
-    "http://cms2.test/temp-laravel-cms-static-files/photos/logo.png";
+  const defaultImage = "http://cms2.test/storage/temp/menew/logo.png";
   const domain = "react-cms.com";
   const url = "react-cms.com/blog";
-  const favicon =
-    "http://cms2.test/temp-laravel-cms-static-files/photos/favicon.png";
+  const favicon = "http://cms2.test/storage/temp/menew/logo.png";
 
   const title = props.title ?? defaultTitle;
   const description = props.description ?? defaultDescription;

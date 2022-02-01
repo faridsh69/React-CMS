@@ -2,13 +2,11 @@ import React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import PhoneIcon from "@mui/icons-material/Phone";
 
 import axios from "axios";
 import Get from "./../Services/Get";
 import GetResponseInterface from "../Interfaces/AxiosResponseInterface";
 import CategoryInterface from "../Interfaces/CategoryInterface";
-import HowToUse from "../Pages/HowToUse";
 import { Avatar } from "@mui/material";
 
 export default function Categories(): JSX.Element {

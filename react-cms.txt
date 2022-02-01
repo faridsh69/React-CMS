@@ -50,8 +50,7 @@
 	+ meta hae safahat o tanzim kon
 	+ table ba sort o pagination
 	+ model food ro tamizesh konam
-	vase category hash ham ye fekri konam
-	scroll category o product bind beshan
+	+ vase category hash ham ye fekri konam
 	lazy loading
 	recycler mikhaim
 	breadcrumb o syncesh kon ba app
@@ -68,29 +67,30 @@
 	+		Foods
 	+			ye liste foods miarim inja
 	+			bad data api ro neshon midim
-				/categories/food ro be sorate reyli neshonesh bede on balash
-				bad ke taraf scrol mikone to food, category on o biare
-				to category ha ham ke scrol kone food ha ham scrol she
-				image hae food ha hamegi lazy loading daran
+	+			/categories/food ro be sorate reyli neshonesh bede on balash
+				image hae food hamegi lazy loading daran
 				vaghti ke ziad miad pain o image ziad load mishe recycler mikhaim
+					data real dorost konam to server vase testing
+					bad ke taraf scrol mikone to food, category on o biare
+					to category ha ham ke scrol kone food ha ham scrol she
 3- detail
-	ro har ghaza ke mizanim url avaz mishe o eyne menew ghaza baz mishe
+	ro har ghaza ke mizanim url avaz mishe o page jadid mishe
 	call an api and show details
-	comment on details
-	like details
+	show images
 	share
-	follow user
-	rate
 	show category, tags, related items
-	like, share, comment, rate
+		comment
+		add to favorite
+		rate
 4- authentication
-	login with social media account like google plus
-	forget password
+	login
+	register
 	see user profile
 	update user profile
-	role and permission
+	forget password
 	safhe confirm email o phone ham bashe
-	kenare profile, user activity ham bezaram
+	role and permission
+	login with social media account like google plus
 5- form
 	form for create an item
 	field types:
@@ -109,12 +109,12 @@
 		ckeditor
 		drop zone image
 		file, image, video, audio
+			image gallery for user profile pictures
+			remove image from gallery
 		vase upload file multi select ham bashe
 		google recaptcha
 	validation on forms
-	send notification after save a data
-	image gallery for user profile pictures
-	remove image from gallery
+	+ send notification after save a data
 6- CMS
 	badesh migim ke har chi model darim ontaraf ke to front-routes hast o ba api pass midim invar
 	sidebar ro az roe front-routes michinim
@@ -153,17 +153,60 @@
 		footer
 7- Tools
 	optimisation laravel cms:
-		php artisan optimise bezan
-		bad bezan php artisan route:list
-		bad test ha ro run kon
-		bad moshkelatesh o raf kon
-		bad biaresh ro ye serveri ke male khodete bala
-		on servere ro bebin chejori mitoni track koni cheghad cpu o ramesh masraf mishe
-		bad ye server vase STRESS test biar bala o shoro kon test begir
-		bad bekhon bebin chejori ha mishe ke cache koni data ro
-		bad az single ton o baghie design pattern ha tosh estefade kon
+		01 tamiz kari
+			code style: vendor/bin/ecs check app
+			app service provider ro tamiz kon - function kon bezar to foldere cms
+			route service provider ro tamiz kon - function kon bezar to foldere cms
+			authService provider ro ham tamiz kon - function kon bezar to foldere cms
+			onja ke routes hamon hast onja ro ham tamiz kon
+			controller ha ro tamiz kon
+		02 API
+			route, controller hash ro benvis vase crud
+			test vase api benevis
+			api ha ro benevis
+			api-doc ro import kon - check kon ke documentesh ham ok bashe
+		03 Features
+			spatie/laravel-activitylog ro az system pakesh kon
+			file manager ro kollan az system hazfesh kon o hame chi sade bashe
+			file manager faghat vase edit ax ha bashe ???? besh fekr kon
+			ax ke upload mikoni beshe crop o resizesh kard
+			be model ha bebin ke age image daran ye src, srcs, src_thumbnail, srcs_thu 
+			in o append koni beshon ke ok bashe
+			gereftane axae thumbnail o ina ham fix she
+			image default bara model ha mizaram
+			to forme ham behtar beshe ax pak kard o edit kard ?
+			user activity ham log bokhore to system - diff change model
+			az didane safhe ta baghie chiza hame mire to log activity
+				url o taraf por nakarde bood khodesh geenerate beshe vase blog o ina
+				injori ke str slug title bashe, bad check kon aya unique e addad bezar tosh
+				kollan in ke ma az onja be front link bedim o ok kon
+				az onja ye link ham bashe ke api ro baz kone to ye tab dge
+		04 Performance
+			bebinam laravel/telescope ya chize dge chi hast vase check performance
+			hey refresh kon o chandta tab bezar refresh beshe , error dad log o bekhon
+			kolle proje beshe php type script o check kon ke injori bashe hatman
+			ba vs code hame file ha ro baz kon motmaen sho ke ba save refactor mishe code
+			php artisan optimise bezan
+			bad bezan php artisan route:list
+			bad test ha ro run kon
+			bad moshkelatesh o raf kon
+			bad bekhon bebin chejori ha mishe ke cache koni data ro
+			bad az single ton o baghie design pattern ha tosh estefade kon
+			as getInstance o in ha estefade kon ba trait to cms files
+			service provider o tamizesh kon beriz hame ina ro ye jai be name cmsProvider
+			toe php bebin ke ba che narmafzari mishe ke cpu ram system ro check kard
+			bad ye stress test ro hamin pc khodam bezaram rosh
+				bad biaresh ro ye serveri ke male khodete bala
+				on servere ro bebin chejori mitoni track koni cheghad cpu o ramesh masraf mishe
+				bad ye server vase STRESS test biar bala o shoro kon test begir
+
+
+
+
 	system multi language
 	reserve hotel o class
+	sass - postcss - JS
+	seo test kon
 	kharide product
 	auto pagination, scroll mikone pain bishtar blog miad
 	ye tab bashe eyne instagram mikonim UI ro
@@ -184,10 +227,7 @@
 		cache
 		performance, Web Vitals
 		pwa - https://www.codica.com/blog/how-to-create-pwa-with-react/
-	relay graphql -	https://relay.dev/
-	sass
-	postcss
-	seo
+			relay graphql -	https://relay.dev/ - cache data ro in ha to pwa
 
 
 	
