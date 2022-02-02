@@ -4,7 +4,7 @@
 
 @keyframes enterFromRight {
   from {
-    transform: translateX(100%);
+    transform: translateX(20%);
   }
   to {
     transform: translateX(0);

@@ -14,13 +14,15 @@ export default async function Get(modelSlug: string): Promise<any> {
     .then(function (response) {
       AxiosResponse.data = response.data.data;
       AxiosResponse.message = response.data.message;
-      AxiosResponse.status = "success";
+      AxiosResponse.status = response.data.status;
+
       return AxiosResponse;
     })
     .catch(function (error) {
       if (error.response) {
         AxiosResponse.message = error.response.data.message;
       }
+
       return AxiosResponse;
     });
 }

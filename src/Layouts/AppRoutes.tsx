@@ -17,6 +17,7 @@ import PhoneEnabledOutlinedIcon from "@mui/icons-material/PhoneEnabledOutlined";
 import Home from "../Pages/Home";
 import Blogs from "../Pages/Blogs";
 import Foods from "../Pages/Foods";
+import Food from "../Pages/Food";
 import HowToUse from "../Pages/HowToUse";
 import AboutUs from "../Pages/AboutUs";
 import ContactUs from "../Pages/ContactUs";
@@ -81,6 +82,7 @@ export default function AppRoutes() {
                   />
                 );
               })}
+              <Route path="/food/:url" element={<Food />} />
               <Route path="*" element={<Error404 />} />
             </Routes>
           </div>

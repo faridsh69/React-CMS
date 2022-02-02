@@ -2,7 +2,7 @@ import Get from "./../Services/Get";
 import React from "react";
 import FoodInterface from "../Interfaces/FoodInterface";
 import ToolsContext from "../Contexts/ToolsContext";
-import GetResponseInterface from "../Interfaces/AxiosResponseInterface";
+import AxiosResponseInterface from "../Interfaces/AxiosResponseInterface";
 import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
 import Meta from "../Layouts/Meta";
 import axios from "axios";
@@ -19,7 +19,7 @@ export default function Foods(): JSX.Element {
   React.useEffect(() => {
     Tools.pageTitle.setState("React-CMS | Foods");
     setLoading(true);
-    Get("food").then((response: GetResponseInterface) => {
+    Get("food").then((response: AxiosResponseInterface) => {
       setLoading(false);
       setItems(response.data);
       Tools.toast.setState({

@@ -49,7 +49,7 @@ export default function Media(props: MediaPropsInterface) {
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
-        <Link to={"blog/" + url}>
+        <Link to={url}>
           <Button size="small">More ...</Button>
         </Link>
       </CardActions>
