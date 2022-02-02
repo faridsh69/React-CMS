@@ -147,7 +147,7 @@ export default function Blogs(): JSX.Element {
                         role="checkbox"
                         aria-checked={isItemSelected}
                         tabIndex={-1}
-                        key={row.title}
+                        key={row.id}
                         selected={isItemSelected}
                       >
                         <TableCell padding="checkbox">
@@ -184,7 +184,7 @@ export default function Blogs(): JSX.Element {
             </Table>
           </TableContainer>
           <TablePagination
-            rowsPerPageOptions={[2, 3, 5]}
+            rowsPerPageOptions={[2, 3, 5, 20, 100]}
             component="div"
             count={rows.length}
             rowsPerPage={rowsPerPage}

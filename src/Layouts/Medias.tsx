@@ -3,7 +3,7 @@ import MediasPropsInterface from "../Interfaces/MediasPropsInterface";
 import Loading from "./Loading";
 import CustomeAlert from "./CustomeAlert";
 import Media from "./Media";
-import LazyLoad from "react-lazyload";
+// import LazyLoad from "react-lazyload";
 import { FixedSizeList } from "react-window";
 
 export default function Medias(props: MediasPropsInterface) {

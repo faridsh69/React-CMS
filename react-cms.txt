@@ -52,11 +52,11 @@
 	+ table ba sort o pagination
 	+ model food ro tamizesh konam
 	+ vase category hash ham ye fekri konam
-	lazy loading
-	recycler mikhaim - https://web.dev/virtualize-long-lists-react-window/
+	+ lazy loading
+	+ recycler mikhaim - https://web.dev/virtualize-long-lists-react-window/
 	breadcrumb o syncesh kon ba app
 	error 404 e safahat ro tanzim konam
-2- list
++ 2- list
 	+ toe componente app aslie ma in chiza bayad bashe
 	+	ye navbar darim ke az baghal baz mishe
 	+	ye seri tabs darim 3 tai ke pain hast - route hash bad moshakhas mishe
@@ -69,11 +69,11 @@
 	+			ye liste foods miarim inja
 	+			bad data api ro neshon midim
 	+			/categories/food ro be sorate reyli neshonesh bede on balash
-				image hae food hamegi lazy loading daran
-				vaghti ke ziad miad pain o image ziad load mishe recycler mikhaim
-					data real dorost konam to server vase testing
-					bad ke taraf scrol mikone to food, category on o biare
-					to category ha ham ke scrol kone food ha ham scrol she
+	+			image hae food hamegi lazy loading daran
+	+			vaghti ke ziad miad pain o image ziad load mishe recycler mikhaim
+	+			data real dorost konam to server vase testing
+	?				bad ke taraf scrol mikone to food, category on o biare
+	?				to category ha ham ke scrol kone food ha ham scrol she
 3- detail
 	ro har ghaza ke mizanim url avaz mishe o page jadid mishe
 	call an api and show details
