@@ -1,6 +1,7 @@
 import ToolsContext from "../Contexts/ToolsContext";
 import ToolsContextInterface from "../Interfaces/ToolsContextInterface";
 import React from "react";
+import Breadcrumb from "../Layouts/Breadcrumb";
 
 export default function Home() {
   const Tools = React.useContext<ToolsContextInterface>(ToolsContext);
@@ -11,6 +12,7 @@ export default function Home() {
 
   return (
     <div>
+      <Breadcrumb title="Home" />
       <div>
         toe home minevisim modules ke bade ha miaram tosh injori mishe ke inja
       </div>

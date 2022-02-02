@@ -1,3 +1,4 @@
+import React from "react";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
@@ -17,6 +18,7 @@ import Moment from "react-moment";
 
 export default function Media(props: MediaPropsInterface) {
   const { title, url, image, description, created_at } = props.item;
+
   return (
     <Card sx={{ maxWidth: 345, m: 2 }}>
       <CardHeader
@@ -48,7 +50,7 @@ export default function Media(props: MediaPropsInterface) {
           <ShareIcon />
         </IconButton>
         <Link to={"blog/" + url}>
-          <Button size="small">Learn More</Button>
+          <Button size="small">More ...</Button>
         </Link>
       </CardActions>
     </Card>

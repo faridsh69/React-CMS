@@ -21,6 +21,7 @@ import HowToUse from "../Pages/HowToUse";
 import AboutUs from "../Pages/AboutUs";
 import ContactUs from "../Pages/ContactUs";
 import SidebarItemInterface from "../Interfaces/SidebarItemInterface";
+import Error404 from "../Pages/Errors/Error404";
 
 export default function AppRoutes() {
   const location = useLocation();
@@ -80,6 +81,7 @@ export default function AppRoutes() {
                   />
                 );
               })}
+              <Route path="*" element={<Error404 />} />
             </Routes>
           </div>
         </CSSTransition>

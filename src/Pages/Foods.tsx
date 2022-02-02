@@ -8,6 +8,8 @@ import Meta from "../Layouts/Meta";
 import axios from "axios";
 import Medias from "../Layouts/Medias";
 import Categories from "../Layouts/Categories";
+import Breadcrumb from "../Layouts/Breadcrumb";
+import RestaurantOutlinedIcon from "@mui/icons-material/RestaurantOutlined";
 
 export default function Foods(): JSX.Element {
   const [items, setItems] = React.useState<FoodInterface[]>([]);
@@ -33,6 +35,10 @@ export default function Foods(): JSX.Element {
   return (
     <>
       <Meta title="Foods" />
+      <Breadcrumb
+        title="Foods"
+        icon={<RestaurantOutlinedIcon sx={{ mr: 0.5 }} fontSize="small" />}
+      />
       <Categories />
       <Medias loading={loading} items={items} />
     </>

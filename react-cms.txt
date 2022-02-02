@@ -54,7 +54,7 @@
 	+ vase category hash ham ye fekri konam
 	+ lazy loading
 	+ recycler mikhaim - https://web.dev/virtualize-long-lists-react-window/
-	breadcrumb o syncesh kon ba app
+	+ breadcrumb o syncesh kon ba app
 	error 404 e safahat ro tanzim konam
 + 2- list
 	+ toe componente app aslie ma in chiza bayad bashe

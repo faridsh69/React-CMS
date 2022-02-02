@@ -3,44 +3,30 @@ import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import HomeIcon from "@mui/icons-material/Home";
-import WhatshotIcon from "@mui/icons-material/Whatshot";
-import GrainIcon from "@mui/icons-material/Grain";
+import BreadcrumbPropsInterface from "../Interfaces/BreadcrumbPropsInterface";
+import { Link as RouterLink } from "react-router-dom";
 
-function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-  event.preventDefault();
-  console.info("You clicked a breadcrumb.");
-}
-
-export default function Breadcrumb() {
+export default function Breadcrumb(props: BreadcrumbPropsInterface) {
   return (
-    <div role="presentation" onClick={handleClick}>
+    <>
       <Breadcrumbs aria-label="breadcrumb">
         <Link
+          component={RouterLink}
+          to="/"
           underline="hover"
           sx={{ display: "flex", alignItems: "center" }}
           color="inherit"
-          href="/"
         >
-          <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-          MUI
-        </Link>
-        <Link
-          underline="hover"
-          sx={{ display: "flex", alignItems: "center" }}
-          color="inherit"
-          href="/getting-started/installation/"
-        >
-          <WhatshotIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-          Core
+          <HomeIcon sx={{ mr: 0.5 }} fontSize="small" />
         </Link>
         <Typography
           sx={{ display: "flex", alignItems: "center" }}
           color="text.primary"
         >
-          <GrainIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-          Breadcrumb
+          {props.icon}
+          {props.title}
         </Typography>
       </Breadcrumbs>
-    </div>
+    </>
   );
 }
