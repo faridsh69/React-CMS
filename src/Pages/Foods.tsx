@@ -30,11 +30,18 @@ export default function Foods(): JSX.Element {
     return () => axios.CancelToken.source().cancel();
   }, []);
 
+  const src2 =
+    "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg";
+  const src1 =
+    "https://images.immediate.co.uk/production/volatile/sites/30/2017/06/healthy-nicoise-09b6cd9.jpg";
+  const src4 =
+    "https://images-prod.healthline.com/hlcmsresource/images/AN_images/healthy-eating-ingredients-1296x728-header.jpg";
+  const src3 =
+    "https://onlinelibrary.wiley.com/pb-assets/20487177/Bioactive%20compounds-1615400802.jpg";
   return (
     <>
       <Meta title="Foods" />
       <Categories />
-
       <Medias loading={loading} items={items} />
     </>
   );

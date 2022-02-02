@@ -14,6 +14,7 @@ import Button from "@mui/material/Button";
 import MediaPropsInterface from "../Interfaces/MediaPropsInterface";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function Media(props: MediaPropsInterface) {
   const { title, url, image, description, created_at } = props.item;

@@ -4,6 +4,7 @@
 	+ api
 	+ create git project
 	+	npx create-react-app react-cms --template typescript
+	+ npm install --save @types/react-window
 	+ create list of tasks
 	+ react cli package
 	+ use bootstrap
@@ -52,7 +53,7 @@
 	+ model food ro tamizesh konam
 	+ vase category hash ham ye fekri konam
 	lazy loading
-	recycler mikhaim
+	recycler mikhaim - https://web.dev/virtualize-long-lists-react-window/
 	breadcrumb o syncesh kon ba app
 	error 404 e safahat ro tanzim konam
 2- list
@@ -152,6 +153,34 @@
 		map
 		footer
 7- Tools
+	error boundry ro ezafe kon be tak take bakhsha
+	system multi language
+	reserve hotel o class
+	sass - postcss - JS
+	seo test kon
+	kharide product
+	auto pagination, scroll mikone pain bishtar blog miad
+	ye tab bashe eyne instagram mikonim UI ro
+	+ Production
+	+	build project - run built project on laravel with react routing
+		CI/CD - https://docs.travis-ci.com/user/getting-started/
+		test - https://jestjs.io/docs/expect - mock data
+			webpack
+			babel
+	+ Debug
+	+	typescript
+	+	flow - https://flow.org/
+		firebase - collect errors on application and website with firebase
+			codestyle - https://github.com/airbnb/javascript/tree/master/react
+			React.StrictMode
+	Performance
+		SSR
+		cache
+		performance, Web Vitals
+		pwa - https://www.codica.com/blog/how-to-create-pwa-with-react/
+			relay graphql -	https://relay.dev/ - cache data ro in ha to pwa
+
+
 	optimisation laravel cms:
 		01 tamiz kari
 			code style: vendor/bin/ecs check app
@@ -199,36 +228,6 @@
 				bad biaresh ro ye serveri ke male khodete bala
 				on servere ro bebin chejori mitoni track koni cheghad cpu o ramesh masraf mishe
 				bad ye server vase STRESS test biar bala o shoro kon test begir
-
-
-
-
-	system multi language
-	reserve hotel o class
-	sass - postcss - JS
-	seo test kon
-	kharide product
-	auto pagination, scroll mikone pain bishtar blog miad
-	ye tab bashe eyne instagram mikonim UI ro
-	+ Production
-	+	build project - run built project on laravel with react routing
-		CI/CD - https://docs.travis-ci.com/user/getting-started/
-		test - https://jestjs.io/docs/expect - mock data
-			webpack
-			babel
-	+ Debug
-	+	typescript
-	+	flow - https://flow.org/
-		firebase - collect errors on application and website with firebase
-			codestyle - https://github.com/airbnb/javascript/tree/master/react
-			React.StrictMode
-	Performance
-		SSR
-		cache
-		performance, Web Vitals
-		pwa - https://www.codica.com/blog/how-to-create-pwa-with-react/
-			relay graphql -	https://relay.dev/ - cache data ro in ha to pwa
-
 
 	
 
