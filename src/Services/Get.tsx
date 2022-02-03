@@ -1,7 +1,9 @@
 import axios from "axios";
 import AxiosResponseInterface from "../Interfaces/AxiosResponseInterface";
 
-export default async function Get(modelSlug: string): Promise<any> {
+export default async function Get(
+  url: string
+): Promise<AxiosResponseInterface> {
   const apiUrl = process.env.REACT_APP_API_URL;
   const AxiosResponse: AxiosResponseInterface = {
     data: [],
@@ -10,7 +12,7 @@ export default async function Get(modelSlug: string): Promise<any> {
   };
 
   return axios
-    .get(apiUrl + modelSlug)
+    .get(apiUrl + url)
     .then(function (response) {
       AxiosResponse.data = response.data.data;
       AxiosResponse.message = response.data.message;

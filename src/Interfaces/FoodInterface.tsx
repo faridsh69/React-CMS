@@ -1,3 +1,6 @@
+import CategoryInterface from "./CategoryInterface";
+import TagInterface from "./TagInterface";
+
 export default interface FoodInterface {
   id: number;
   title: string;
@@ -8,13 +11,14 @@ export default interface FoodInterface {
   calorie: number;
   properties: string;
   content: string;
-  image: string;
-  video: string;
   activated: boolean;
-  category_id: number;
-  tags: string;
-  relateds: any;
   language: string;
   created_at: string;
   updated_at: string;
+  image: string;
+  video: string;
+  category_id: number;
+  tags: TagInterface[];
+  relateds: FoodInterface[];
+  category: CategoryInterface;
 }

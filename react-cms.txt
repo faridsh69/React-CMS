@@ -77,9 +77,11 @@
 3- detail
 	+ ro har ghaza ke mizanim url avaz mishe o page jadid mishe
 	call an api and show details
+	show category
+	tags
+	related items
 	show images
 	share
-	show category, tags, related items
 		comment
 		add to favorite
 		rate
