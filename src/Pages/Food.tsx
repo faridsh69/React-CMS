@@ -8,6 +8,9 @@ import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Switch from "@mui/material/Switch";
 import DoneIcon from "@mui/icons-material/Done";
+import ShareIcon from "@mui/icons-material/Share";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import TextField from "@mui/material/TextField";
 
 import ToolsContext from "../Contexts/ToolsContext";
 import AxiosResponseInterface from "../Interfaces/AxiosResponseInterface";
@@ -17,6 +20,9 @@ import Get from "../Services/Get";
 import Loading from "../Layouts/Loading";
 import Error404 from "./Errors/Error404";
 import TagInterface from "../Interfaces/TagInterface";
+import Medias from "../Layouts/Medias";
+import Rate from "../Layouts/Rate";
+import { Button } from "@mui/material";
 
 export default function Food() {
   const [item, setItem] = React.useState<FoodInterface>();
@@ -59,6 +65,8 @@ export default function Food() {
           <Typography variant="h3" component="h1">
             {item.title}
           </Typography>
+          <FavoriteIcon color="secondary" />
+
           <Switch defaultChecked={item.activated} />
           <Chip
             label={item.language}
@@ -74,6 +82,13 @@ export default function Food() {
           ) : (
             ""
           )}
+          <a
+            href={"whatsapp://send?text=" + item.url}
+            data-action="share/whatsapp/share"
+          >
+            <ShareIcon />
+            Share via Whatsapp
+          </a>
         </Box>
         <Chip
           label={"Created At: " + item.created_at}
@@ -83,10 +98,10 @@ export default function Food() {
         <br />
         <Chip
           label={"Updated At: " + item.updated_at}
-          sx={{ mt: 1 }}
+          sx={{ mt: 1, mb: 2 }}
           variant="outlined"
         />
-
+        <Rate />
         <Typography
           variant="h5"
           component="h4"
@@ -108,7 +123,6 @@ export default function Food() {
               );
             })
           : ""}
-
         <Divider />
         <Box>
           <img src={item.image} width={300} />
@@ -131,6 +145,21 @@ export default function Food() {
             {item.properties}
           </Paper>
         </Box>
+        <Typography component="h5" variant="h4">
+          Related Items
+        </Typography>
+        <Divider />
+        <Medias loading={false} items={item.relateds} />
+        <Divider />
+        Comments:
+        <br />
+        <TextField
+          placeholder="Write your comment here ..."
+          multiline
+          rows={2}
+        />
+        <br />
+        <Button variant="contained">Submit</Button>
       </div>
     );
   }
