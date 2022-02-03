@@ -79,22 +79,17 @@
 	+ call an api and show details
 	+ show category
 	+ tags
-	+ related items
 	+ share
+	+ related items
 	+ show images
-	+	rate
-	+ 	add to favorite
-	+	comment
-4- authentication
-	login
-	register
-	see user profile
-	update user profile
-	forget password
-	safhe confirm email o phone ham bashe
-	role and permission
-	login with social media account like google plus
-5- form
+	+ rate
+	+ add to favorite
+	+ comment
+		gallery images when server images are ready
+		dynamic rates
+		dynamic favorite
+		dynamic comments
+4- form
 	form for create an item
 	field types:
 		text,
@@ -118,7 +113,43 @@
 		google recaptcha
 	validation on forms
 	+ send notification after save a data
-6- CMS
+5- Tools
+	error boundry ro ezafe kon be tak take bakhsha
+		system multi language
+		reserve hotel o class
+		kharide product
+		seo test kon
+			auto pagination, scroll mikone pain bishtar blog miad
+			sass - postcss - JS
+			ye tab bashe eyne instagram mikonim UI ro
+	+ Production
+	+	build project - run built project on laravel with react routing
+		CI/CD - https://docs.travis-ci.com/user/getting-started/
+		test - https://jestjs.io/docs/expect - mock data
+			webpack
+			babel
+	+ Debug
+	+	typescript
+	+	flow - https://flow.org/
+		firebase - collect errors on application and website with firebase
+			codestyle - https://github.com/airbnb/javascript/tree/master/react
+			React.StrictMode
+	Performance
+		SSR
+		cache
+		performance, Web Vitals
+		pwa - https://www.codica.com/blog/how-to-create-pwa-with-react/
+			relay graphql -	https://relay.dev/ - cache data ro in ha to pwa
+6- authentication
+	login
+	register
+	see user profile
+	update user profile
+	forget password
+	safhe confirm email o phone ham bashe
+	role and permission
+	login with social media account like google plus
+7- CMS
 	badesh migim ke har chi model darim ontaraf ke to front-routes hast o ba api pass midim invar
 	sidebar ro az roe front-routes michinim
 	daghighan on model ha bayad bian inja be sorate automatic model ha beshinan
@@ -154,33 +185,6 @@
 		contact
 		map
 		footer
-7- Tools
-	error boundry ro ezafe kon be tak take bakhsha
-	system multi language
-	reserve hotel o class
-	sass - postcss - JS
-	seo test kon
-	kharide product
-	auto pagination, scroll mikone pain bishtar blog miad
-	ye tab bashe eyne instagram mikonim UI ro
-	+ Production
-	+	build project - run built project on laravel with react routing
-		CI/CD - https://docs.travis-ci.com/user/getting-started/
-		test - https://jestjs.io/docs/expect - mock data
-			webpack
-			babel
-	+ Debug
-	+	typescript
-	+	flow - https://flow.org/
-		firebase - collect errors on application and website with firebase
-			codestyle - https://github.com/airbnb/javascript/tree/master/react
-			React.StrictMode
-	Performance
-		SSR
-		cache
-		performance, Web Vitals
-		pwa - https://www.codica.com/blog/how-to-create-pwa-with-react/
-			relay graphql -	https://relay.dev/ - cache data ro in ha to pwa
 
 
 	optimisation laravel cms:

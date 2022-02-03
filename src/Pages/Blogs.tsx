@@ -18,6 +18,8 @@ import Tooltip from "@mui/material/Tooltip";
 import DeleteIcon from "@mui/icons-material/Delete";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
+import Button from "@mui/material/Button";
+import { Link as RouterLink } from "react-router-dom";
 
 import Get from "./../Services/Get";
 import BlogInterface from "../Interfaces/BlogInterface";
@@ -113,6 +115,14 @@ export default function Blogs(): JSX.Element {
   return (
     <>
       <Meta title="Blogs" />
+      <Button
+        component={RouterLink}
+        to="create"
+        color="success"
+        variant="outlined"
+      >
+        Create new Blog
+      </Button>
       {loading ? <Loading type="circle" /> : ""}
       <Box sx={{ width: "100%" }}>
         <Paper sx={{ width: "100%", mb: 2 }}>
