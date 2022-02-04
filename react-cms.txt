@@ -56,6 +56,7 @@
 	+ recycler mikhaim - https://web.dev/virtualize-long-lists-react-window/
 	+ breadcrumb o syncesh kon ba app
 	+ error 404 e safahat ro tanzim konam
+	+ render html as react
 + 2- list
 	+ toe componente app aslie ma in chiza bayad bashe
 	+	ye navbar darim ke az baghal baz mishe
@@ -103,13 +104,15 @@
 	+	boolean -> checkbox, switch
 	+	select, 
 	+	multiselect,
-		ckeditor
-		drop zone image
-		file, image, video, audio
-			image gallery for user profile pictures
-			remove image from gallery
-		vase upload file multi select ham bashe
 		google recaptcha
+			site key: 6LcSO1geAAAAAFsT4FMYg_dxmg3wg6E3vy-ZqoFB
+			secret key: 6LcSO1geAAAAAJr1oV5mZcrtL-Ani-m0Tffu3eIN
+
+			drop zone image
+			vase upload file multi select ham bashe
+			file, image, video, audio
+			remove image from gallery
+				ckeditor
 	help block
 	label
 	form action o method
@@ -245,6 +248,7 @@
 
 	optimisation laravel cms:
 		01 tamiz kari
+			chizae moshtarake user o modelTrait o yekish kon
 			code style: vendor/bin/ecs check app
 			app service provider ro tamiz kon - function kon bezar to foldere cms
 			route service provider ro tamiz kon - function kon bezar to foldere cms
