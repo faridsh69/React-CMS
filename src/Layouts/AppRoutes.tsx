@@ -23,6 +23,7 @@ import AboutUs from "../Pages/AboutUs";
 import ContactUs from "../Pages/ContactUs";
 import SidebarItemInterface from "../Interfaces/SidebarItemInterface";
 import Error404 from "../Pages/Errors/Error404";
+import BlogForm from "../Pages/Blog/Form";
 
 export default function AppRoutes() {
   const location = useLocation();
@@ -83,6 +84,7 @@ export default function AppRoutes() {
                 );
               })}
               <Route path="/food/:url" element={<Food />} />
+              <Route path="/blog/create" element={<BlogForm />} />
               <Route path="*" element={<Error404 />} />
             </Routes>
           </div>

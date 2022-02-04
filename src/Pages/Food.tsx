@@ -11,6 +11,7 @@ import DoneIcon from "@mui/icons-material/Done";
 import ShareIcon from "@mui/icons-material/Share";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 
 import ToolsContext from "../Contexts/ToolsContext";
 import AxiosResponseInterface from "../Interfaces/AxiosResponseInterface";
@@ -22,7 +23,7 @@ import Error404 from "./Errors/Error404";
 import TagInterface from "../Interfaces/TagInterface";
 import Medias from "../Layouts/Medias";
 import Rate from "../Layouts/Rate";
-import { Button } from "@mui/material";
+import parse from "html-react-parser";
 
 export default function Food() {
   const [item, setItem] = React.useState<FoodInterface>();
@@ -139,8 +140,9 @@ export default function Food() {
             {item.description}
           </Paper>
           <Paper sx={{ padding: 3, mb: 2 }} elevation={2}>
-            {item.content}
+            {parse(item.content)}
           </Paper>
+          {/* <div dangerouslySetInnerHTML={{ __html: item.content }} /> */}
           <Paper sx={{ padding: 3 }} elevation={3}>
             {item.properties}
           </Paper>

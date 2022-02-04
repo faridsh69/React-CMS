@@ -72,8 +72,8 @@
 	+			image hae food hamegi lazy loading daran
 	+			vaghti ke ziad miad pain o image ziad load mishe recycler mikhaim
 	+			data real dorost konam to server vase testing
-	?				bad ke taraf scrol mikone to food, category on o biare
-	?				to category ha ham ke scrol kone food ha ham scrol she
+					bad ke taraf scrol mikone to food, category on o biare
+					to category ha ham ke scrol kone food ha ham scrol she
 + 3- detail
 	+ ro har ghaza ke mizanim url avaz mishe o page jadid mishe
 	+ call an api and show details
@@ -90,20 +90,19 @@
 		dynamic favorite
 		dynamic comments
 4- form
-	form for create an item
-	field types:
-		text,
-		textarea,
-		number,
-		date,
-		time,
-		email,
-		color,
-		password,
-		time,
-		boolean -> checkbox, switch
-		select, 
-		multiselect,
+	+ form for create an item
+	+ field types:
+	+	text,
+	+	number,
+	+	date,
+	+	time,
+	+	textarea,
+	+	email,
+	+	color,
+	+	password,
+	+	boolean -> checkbox, switch
+	+	select, 
+	+	multiselect,
 		ckeditor
 		drop zone image
 		file, image, video, audio
@@ -111,7 +110,11 @@
 			remove image from gallery
 		vase upload file multi select ham bashe
 		google recaptcha
-	validation on forms
+	help block
+	label
+	form action o method
+	form submit
+	validation
 	+ send notification after save a data
 5- Tools
 	error boundry ro ezafe kon be tak take bakhsha
@@ -150,11 +153,64 @@
 	role and permission
 	login with social media account like google plus
 7- CMS
+	khob injori mikham beshe ke alan man besh ye models pass bedam
+	on models o check kone age side bar item i to models bashe neshon bede
+	to hamon side bar bayad settings ya pages/ ro be sorate zir shakhe i kard
+	ya morede alaghe ha o comment ha o rate hai ke user zade o ham neshon bedim
+	bad kholase on models e bayad to side bar bashe
+	sidebar:
+	model: auto matic on interface model ro ham pass bedim intaraf
+	yani mikham ke aslan az aval taraf invar model columns ro to react tarifesh kon 
+	bad ba in column e kollan react sakhte beshe
+	khob permission o policy ro lazem nist barash kari konam
+	aval az hame bayad ba model columns ma betonim form generate konim
+	migration ke inja kollan nadarim
+	toe table ham bayad beshe goft ke in model column bashe ya nabashe
+	seeder o faker ham ke inja nadarim
+	side bar o route hae create :url o inha ham bayad autogenerate beshan
+	meta hae safhe ham ba tavajoh be in ke blog e ya food e bayad generate beshe
+	pas ma ye component darim be name
+		foods
+			interface, meta
+		food
+			interface, meta
+		foodCreate
+			interface, form, meta
+
+	to starte app ma ye api mikhaim ke che model hai ba modelColumnash biad invar
+		az to model column ha interface aya mishe keshid biron ya na
+		yani aya interface mitone dynamic bashe ya na
+
+	m M F S r c t f e i s p
+	sidebar    => har model i ke miad in taraf side bar automatic barash generate she
+	route      => har modeli ke to api az ontaraf biad hamon ham routash bayad bashe
+	model      => faghat ye interface i mikhaim ke tahghigh kon mishe aya az server biad ???
+	controller => Kollan ye component be name Model, Models, ModelForm mikhaim ma
+	test       => * kheili mohemme ke vase har model i betonim list o show o form o auto konim
+	form       => automatic generate beshe ba model columns ha
+	table      => toe table ha beshe begim in column bashe ya nabashe
+	migration  => -
+	Fake       => -
+	Seeder     => -
+	export     => -
+	import     => -
+	policy     => -
+
+	column:
+		name: title
+		type: string
+		table: true
+		form_type: checkbox, switch - image
+		rules: required, number, max, min,...
+		help: zire input e bebinim chi neveshte
+
 	badesh migim ke har chi model darim ontaraf ke to front-routes hast o ba api pass midim invar
 	sidebar ro az roe front-routes michinim
 	daghighan on model ha bayad bian inja be sorate automatic model ha beshinan
 	har chi ham ke page darim daghighan on page ha ham bayad inja bian beshinan
 	toe config laravel-cms charkh bezan chize mohemmi didi ke mishe estefade kard api konesh
+	aslan kolle config o pass bedim har chish ke lazeme in taraf ba ona system render she
+8- Theme:
 	Home
 		toe home minevisim modules ke bade ha miaram tosh
 		injori mishe ke inja module hai ke to server hast pass dade mishe
