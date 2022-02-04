@@ -1,12 +1,61 @@
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import React from "react";
+import {
+  FormControl,
+  FormHelperText,
+  IconButton,
+  InputAdornment,
+  InputLabel,
+  OutlinedInput,
+} from "@mui/material";
+import ReCAPTCHA from "react-google-recaptcha";
+
 export default function BlogForm() {
+  const SITE_KEY = process.env.REACT_APP_CAPTCHA_SITE_KEY ?? "SITE_KEY";
+  const [showPassword, setShowPassword] = React.useState<boolean>(false);
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <form>
-      <input type="text" defaultValue="input" />
+      <FormControl fullWidth>
+        <InputLabel htmlFor="text">Text</InputLabel>
+        <OutlinedInput id="text" label="Text" />
+        <FormHelperText id="helper-text">Helper Text</FormHelperText>
+      </FormControl>
       <br />
-      <input type="email" defaultValue="farid.sh69@gmail.com" />
       <br />
-      <input type="number" defaultValue="123" />
+      <FormControl fullWidth>
+        <InputLabel htmlFor="number">Number</InputLabel>
+        <OutlinedInput
+          id="number"
+          label="Number"
+          inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
+        />
+        <FormHelperText id="helper-number">Helper Number</FormHelperText>
+      </FormControl>
       <br />
+      <br />
+      <FormControl fullWidth>
+        <InputLabel htmlFor="input-password">Password</InputLabel>
+        <OutlinedInput
+          id="outlined-adornment-password"
+          type={showPassword ? "text" : "password"}
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton onClick={handleClickShowPassword} edge="end">
+                {showPassword ? <VisibilityOff /> : <Visibility />}
+              </IconButton>
+            </InputAdornment>
+          }
+          label="Password"
+        />
+      </FormControl>
+      <br />
+      <br />
+
+      {/* <ReCAPTCHA sitekey={SITE_KEY} /> */}
       <input type="date" defaultValue="2022-10-01" />
       <br />
       <input type="time" defaultValue="11:30" />

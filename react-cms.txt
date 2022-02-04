@@ -4,7 +4,7 @@
 	+ api
 	+ create git project
 	+	npx create-react-app react-cms --template typescript
-	+ npm install --save @types/react-window
+	+ npm install --save @types/react-google-recaptcha
 	+ create list of tasks
 	+ react cli package
 	+ use bootstrap
@@ -104,17 +104,16 @@
 	+	boolean -> checkbox, switch
 	+	select, 
 	+	multiselect,
-		google recaptcha
-			site key: 6LcSO1geAAAAAFsT4FMYg_dxmg3wg6E3vy-ZqoFB
-			secret key: 6LcSO1geAAAAAJr1oV5mZcrtL-Ani-m0Tffu3eIN
-
+	+	google recaptcha
+	+	site key: 6LcSO1geAAAAAFsT4FMYg_dxmg3wg6E3vy-ZqoFB
+	+	secret key: 6LcSO1geAAAAAJr1oV5mZcrtL-Ani-m0Tffu3eIN
+	+ help block
+	+ label
 			drop zone image
 			vase upload file multi select ham bashe
 			file, image, video, audio
 			remove image from gallery
 				ckeditor
-	help block
-	label
 	form action o method
 	form submit
 	validation
@@ -295,7 +294,11 @@
 				on servere ro bebin chejori mitoni track koni cheghad cpu o ramesh masraf mishe
 				bad ye server vase STRESS test biar bala o shoro kon test begir
 
-	
+
+uni-directional data flow
+React is easy to integrate with other frameworks like Meteor, Angular, etc
+ES6 syntax when compared to ES5
+stateful and stateless
 
 
 1
