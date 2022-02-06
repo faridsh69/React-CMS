@@ -7,12 +7,18 @@ import {
   InputAdornment,
   InputLabel,
   OutlinedInput,
+  TextField,
 } from "@mui/material";
 import ReCAPTCHA from "react-google-recaptcha";
+import LocalizationProvider from "@material-ui/lab/LocalizationProvider";
+import DatePicker from "@material-ui/lab/DatePicker";
+import AdapterDateFns from "@material-ui/lab/AdapterMoment";
 
 export default function BlogForm() {
   const SITE_KEY = process.env.REACT_APP_CAPTCHA_SITE_KEY ?? "SITE_KEY";
   const [showPassword, setShowPassword] = React.useState<boolean>(false);
+  const [value, setValue] = React.useState<Date | null>(null);
+
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -23,6 +29,13 @@ export default function BlogForm() {
         <InputLabel htmlFor="text">Text</InputLabel>
         <OutlinedInput id="text" label="Text" />
         <FormHelperText id="helper-text">Helper Text</FormHelperText>
+      </FormControl>
+      <br />
+      <br />
+      <FormControl fullWidth>
+        <InputLabel htmlFor="email">Email</InputLabel>
+        <OutlinedInput id="email" label="Email" type="email" />
+        <FormHelperText id="helper-email">Helper Email</FormHelperText>
       </FormControl>
       <br />
       <br />
@@ -54,15 +67,25 @@ export default function BlogForm() {
       </FormControl>
       <br />
       <br />
-
-      {/* <ReCAPTCHA sitekey={SITE_KEY} /> */}
-      <input type="date" defaultValue="2022-10-01" />
+      <FormControl fullWidth>
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <DatePicker
+            label="Date"
+            value={value}
+            onChange={(newValue: any) => {
+              setValue(newValue);
+            }}
+            renderInput={(params: any) => <TextField {...params} />}
+          />
+        </LocalizationProvider>
+      </FormControl>
       <br />
+      <br />
+
+      <ReCAPTCHA sitekey={SITE_KEY} />
       <input type="time" defaultValue="11:30" />
       <br />
       <input type="color" defaultValue="#e66465" />
-      <br />
-      <input type="password" defaultValue="123456" />
       <br />
       <textarea defaultValue="textarea" />
       <br />

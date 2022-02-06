@@ -4,7 +4,7 @@
 	+ api
 	+ create git project
 	+	npx create-react-app react-cms --template typescript
-	+ npm install --save @types/react-google-recaptcha
+	+ npm install --save @types/swiper
 	+ create list of tasks
 	+ react cli package
 	+ use bootstrap
@@ -57,6 +57,7 @@
 	+ breadcrumb o syncesh kon ba app
 	+ error 404 e safahat ro tanzim konam
 	+ render html as react
+	react query ro add kon to proje
 + 2- list
 	+ toe componente app aslie ma in chiza bayad bashe
 	+	ye navbar darim ke az baghal baz mishe
@@ -73,6 +74,7 @@
 	+			image hae food hamegi lazy loading daran
 	+			vaghti ke ziad miad pain o image ziad load mishe recycler mikhaim
 	+			data real dorost konam to server vase testing
+					Swiper ro testesh kon to mobile
 					bad ke taraf scrol mikone to food, category on o biare
 					to category ha ham ke scrol kone food ha ham scrol she
 + 3- detail
@@ -324,6 +326,65 @@ stateful and stateless
 	api structure{ data, message, status }
 	payame monaseb baraye timeout
 	FireBase(log kollie error ha, tedade nasb, tedade crash, )
+
+
+
+TASKS
+	- react cms tamom she
+	- laravel cms tamom she
+	+ you dont know js ro bekhonam
+	+ sample test hae codewars o bezanam
+	+ kent c dods o bekhonam
+	+ resume reactim o dorost konam
+	+ company hae irani resume befrestam beram mosahebe
+	+ soal o javabae js o react o bekhonam
+	+ 	robot to crypto bezanam
+	+ 	gametoman o beram jolo
+	+ 		site resume khodam o dorost konam ba laravel-react
+	+ Shoro konam apply
+
+TARGETS:
+	#1 resume reactim o dorost konam
+	#2 site hae irani resume befrestam beram mosahebe - badesh beram vase site khareji
+	#3  + questions js o react o bekhonam +  + 
+ 		+ https://youtu.be/8aGhZQkoFbQ
+ 		https://downloadly.ir/elearning/video-tutorials/javascript-understanding-the-weird-parts-5/
+		kent c dods o bekhonam: https://epicreact.dev/
+		practice code: https://www.hackerrank.com/
+	 	you dont know js: https://github.com/getify/You-Dont-Know-JS
+		+ codewars: https://www.codewars.com/
+		css sass: https://cssbattle.dev/
+	#4 react cms o tamom konam
+	#5 laravel cms o tamom konam
+	#6 robot o gametoman
+
+Kent.c.dods tamom beshe - Drink
+ 5 ta doone mosahebe ba kharej ro react dashte basham - Party
+
+
+
+resume:
+	1. angular 1 in gomrok
+	2. php pure vase server site gaming
+	3. app game ba C# unity
+	4. laravel4.2-vue festival ticket selling
+	5. angular 2 vase bank ayande
+	6. laravel5.1-vue2 order restaurant
+	7. laravel4-vue2 artists social network
+	8. Yii2-Angular4 online shop generator for torfe negar
+	9. Laravel5-Vue2 Map and virtual tour Realstate for melkana
+	10. react-native for android application for melkana
+	11. app android ba react-native for matlab calculations
+	12. AngularJs for Denmark company in real state
+	13. Laravel5.8 - api for XBody - ems spot company
+	14. Car rental website - laravel6 vue
+	15. laravel cms for synergy power website
+	16. Crypto currency exchange website - laravel
+	17. Digital restaurant menu - menew - laravel NuxtJs
+	18. Php React for DiLer - digital learning system in germany
+
+
+
 
 
 + import name: class/{function} from './base/setup' || 'react'
